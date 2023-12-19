@@ -1,27 +1,35 @@
-Devolviendo funciones desde funciones:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Decoradores
+----------
+
+Los decoradores son funciones que modifican la funcionalidad de otras funciones, y ayudan a hacer nuestro código más corto y Pytónico o Pythonic.
+A continuación veremos lo que son, cómo se crean y cómo podemos usarlos.
 
 .. code:: python
 
-    def hola(nombre="Covadonga"):
-        def saluda():
-            return "Estás dentro de la función saluda()"
+    def hola(nombre="Ceste"):
+        return "Hola " + nombre
 
-        def bienvenida():
-            return "Estás dentro de la función bienvenida()"
+    print(hola())
+    # Salida: 'Hola Ceste'
 
-        if nombre == "Covadonga":
-            return saluda
-        else:
-            return bienvenida
+    # Podemos asignar una función a una variable
+    saluda = hola
+    # No usamos () porque no la estamos llamando, sino que la estamos
+    # asignado a una variable
 
-    a = hola()
-    print(a)
-    #Salida: <function saluda at 0x7f2143c01500>
+    print(saluda())
+    # Salida: 'Hola Ceste'
 
-    #Es decir, la variable 'a' ahora apunta a la función
-    # saluda() declarada dentro de hola(). Por lo tanto podemos llamarla.
+    # También podemos eliminar la función asignada a la variable con del
+    try:
+        del hola
+        print(hola())
+    except Exception as e:
+        print('Ocurrió un Exception. {}'.format(e.args[-1]))
+    #Salida: NameError
 
-    print(a())
-    #Salida: Estás dentro de la función saluda()
+    print(saluda())
+    #Salida: 'Hola Ceste'
+
+
 

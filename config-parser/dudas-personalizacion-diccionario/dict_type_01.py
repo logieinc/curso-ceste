@@ -4,7 +4,10 @@ from configparser import ConfigParser, ExtendedInterpolation
 class MyDict(dict):
     def __setitem__(self, key, value):
         # Puedes personalizar la forma en que se almacenan las opciones
-        super(MyDict, self).__setitem__(key, value.upper())
+        if isinstance(value, str):
+            super(MyDict, self).__setitem__(key, value.upper())
+        else:
+            super(MyDict, self).__setitem__(key, value)
 
 # Crea un objeto ConfigParser y especifica el tipo de diccionario personalizado
 config = ConfigParser(interpolation=None, dict_type=MyDict)

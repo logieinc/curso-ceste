@@ -79,14 +79,14 @@ No es necesario ejecutar una función dentro de otra. Simplemente podemos devolv
 
 .. code:: python
 
-    def hola(nombre="Covadonga"):
+    def hola(nombre="Ceste"):
         def saluda():
             return "Estás dentro de la función saluda()"
 
         def bienvenida():
             return "Estás dentro de la función bienvenida()"
 
-        if nombre == "Covadonga":
+        if nombre == "Ceste":
             return saluda
         else:
             return bienvenida

@@ -1,3 +1,5 @@
+# Definir funciones dentro de funciones
+
 def hola(nombre="Ceste"):
     print("Estás dentro de la función hola()")
 

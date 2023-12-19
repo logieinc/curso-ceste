@@ -1,3 +1,5 @@
+
+# Todo es un objeto en Python
 def hola(nombre="Ceste"):
     return "Hola " + nombre
 
@@ -18,7 +20,7 @@ try:
     print(hola())
 except Exception as e:
     print('Ocurrió un Exception. {}'.format(e.args[-1]))
-#Salida: NameError
+# Salida: NameError
 
 print(saluda())
-#Salida: 'Hola Ceste'
+# Salida: 'Hola Ceste'

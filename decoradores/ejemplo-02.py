@@ -23,8 +23,10 @@ hola()
 # se llama en realidad también a saluda() y bienvenida()
 # Sin embargo estas dos últimas funciones no están accesibles
 # fuera de hola(). Si lo intentamos, tendremos un error.
-
-saluda()
+try:
+    saluda()
+except Exception as e:
+    print('Ocurrió un Exception. {}'.format(e.args[-1]))
 #Saluda: NameError: name 'saluda' is not defined
 
 

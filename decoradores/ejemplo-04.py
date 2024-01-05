@@ -3,7 +3,6 @@
 def hola():
     return "¡Hola!"
 
-
 def hazEstoAntesDeHola(func):
     print("Hacer algo antes de llamar a func")
     print(func())

@@ -142,7 +142,7 @@ Ahora ya tienes todas las piezas del rompecabezas. Los decoradores son funciones
 Tu primer decorador:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Realmente en el ejemplo anterior ya vimos como crear un decorador. Vamos a modificarlo y hacerlo un poco realista.
+Realmente en el ejemplo anterior ya vimos como crear un decorador. Vamos a modificarlo y hacerlo más realista.
 
 .. code:: python
 
@@ -173,7 +173,15 @@ Realmente en el ejemplo anterior ya vimos como crear un decorador. Vamos a modif
 
 Simplemente hemos aplicado todo lo aprendido en los apartados anteriores. Así es exactamente como funcionan los decoradores en Python. Envuelven una función para modificar su comportamiento de una manera determinada.
 
+Lo que nos debe quedar claro es que al momento de implementar un decorador estaremos trabajando, con por lo menos, 3 funciones. El input, el output y la función principal. Para que nos quede más en claro a mi me gusta nombrar a las funciones como: A, B, y C.
+
+Donde A recibe como parámetro B para dar como salida a C. Esta es una pequeña "formula" la cual me gusta mucho mencionar.
+
+    A(B) -> C
+
 Tal vez te preguntes ahora porqué no hemos usado @ en el código. Esto es debido a que @ es simplemente una forma de hacerlo más corto, pero ambas opciones son perfectamente válidas.
+
+Ejemplo 05-a:
 
 .. code:: python
 

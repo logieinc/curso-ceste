@@ -14,8 +14,10 @@ def nuevo_decorador(a_func):
 def funcion_a_decorar():
     print("Soy la función que necesita ser decorada")
 
-
+print()
 funcion_a_decorar()
+print('---------------------------------------------')
+print('')
 # Salida: "Soy la función que necesita ser decorada"
 
 funcion_a_decorar = nuevo_decorador(funcion_a_decorar)

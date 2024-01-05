@@ -1,7 +1,9 @@
 Decoradores
 ----------
 
-Los decoradores son funciones que modifican la funcionalidad de otras funciones, y ayudan a hacer nuestro código más corto y Pytónico o Pythonic.
+`Curso gráfico MIRO <https://miro.com/welcomeonboard/M2owWWFuRHBwaXJxbm1rR2pnWjdvazdBZ2l1ZUdWVU1taTAxWExqNDdyd1Q0d2htMGszSEw1TWJ3ZU90dVpZVnwzNDU4NzY0NTY3ODY3MjMyMTY2fDI=?share_link_id=544290942241>`__
+
+Los decoradores son funciones que modifican la funcionalidad de otras funciones, y ayudan a hacer nuestro código más corto y Pytónico o Pythonic (forma de escribir código en Python que sigue los principios y las convenciones de diseño que son típicos y aceptados en la comunidad de programadores de Python).
 A continuación veremos lo que son, cómo se crean y cómo podemos usarlos.
 
 Todo es un objeto en Python:
@@ -105,7 +107,7 @@ Echa un vistazo otra vez al código.
 Si te fijas en el if/else, estamos devolviendo ``saluda`` y ``bienvenida`` y no ``saluda()`` y ``bienvenida()``. ¿A qué se debe esto? Se debe a que cuando usas paréntesis ``()`` la función se ejecuta. Por lo contrario, si no los usas la función es pasada y puede ser asignada a una variable sin ser ejecutada.
 
 Vamos a analizar el código paso por paso.
-Al principio usamos ``a = hola()``, por lo que el parámetro para ``nombre`` que se toma es Covadonga ya que es el que hemos asignado por defecto. Esto hará que en el ``if`` se entre en ``nombre == "Covadonga"``, lo que hará que se devuelva la función saluda. Si por lo contrario hacemos la llamada a la función con ``a = hola(nombre="Pelayo")``, la función devuelta será ``bienvenida``.
+Al principio usamos ``a = hola()``, por lo que el parámetro para ``nombre`` que se toma es "Ceste" ya que es el que hemos asignado por defecto. Esto hará que en el ``if`` se entre en ``nombre == "Ceste"``, lo que hará que se devuelva la función saluda. Si por lo contrario hacemos la llamada a la función con ``a = hola(nombre="Pelayo")``, la función devuelta será ``bienvenida``.
 
 
 Usando funciones como argumento de otras:

@@ -4,6 +4,9 @@ Decoradores
 `Curso gráfico MIRO <https://miro.com/welcomeonboard/M2owWWFuRHBwaXJxbm1rR2pnWjdvazdBZ2l1ZUdWVU1taTAxWExqNDdyd1Q0d2htMGszSEw1TWJ3ZU90dVpZVnwzNDU4NzY0NTY3ODY3MjMyMTY2fDI=?share_link_id=544290942241>`__
 
 Los decoradores son funciones que modifican la funcionalidad de otras funciones, y ayudan a hacer nuestro código más corto y Pytónico o Pythonic (forma de escribir código en Python que sigue los principios y las convenciones de diseño que son típicos y aceptados en la comunidad de programadores de Python).
+
+Es importante aclarar que los decoradores forman parte de un `patrón de diseño de software <https://refactoring.guru/es/design-patterns/decorator>`__, entendiendo la frase "patrón de diseño" se refiere a soluciones generales y reutilizables para problemas comunes en el diseño de software.
+
 A continuación veremos lo que son, cómo se crean y cómo podemos usarlos.
 
 Todo es un objeto en Python:
@@ -144,6 +147,8 @@ Tu primer decorador:
 
 Realmente en el ejemplo anterior ya vimos como crear un decorador. Vamos a modificarlo y hacerlo más realista.
 
+Ejemplo 05-a:
+
 .. code:: python
 
     def nuevo_decorador(a_func):
@@ -180,8 +185,6 @@ Donde A recibe como parámetro B para dar como salida a C. Esta es una pequeña 
     A(B) -> C
 
 Tal vez te preguntes ahora porqué no hemos usado @ en el código. Esto es debido a que @ es simplemente una forma de hacerlo más corto, pero ambas opciones son perfectamente válidas.
-
-Ejemplo 05-a:
 
 .. code:: python
 

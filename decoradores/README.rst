@@ -10,6 +10,7 @@ Todo es un objeto en Python:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ejemplo 01:
+
 .. code:: python
 
     def hola(nombre="Ceste"):
@@ -44,6 +45,7 @@ Definir funciones dentro de funciones:
 En Python podemos definir funciones dentro de otras funciones veamos el siguiente ejemplo:
 
 Ejemplo 02:
+
 .. code:: python
 
     def hola(nombre="Ceste"):
@@ -82,6 +84,7 @@ Devolviendo funciones desde funciones:
 No es necesario ejecutar una función dentro de otra. Simplemente podemos devolverla como salida:
 
 Ejemplo 03:
+
 .. code:: python
 
     def hola(nombre="Ceste"):

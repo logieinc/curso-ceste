@@ -124,7 +124,7 @@ Por último, podemos hacer que una función tenga a otra como entrada y que adem
         print("Hacer algo antes de llamar a func")
         print(func())
 
-    hazEstoAntesDeHola(hi)
+    hazEstoAntesDeHola(hola)
     #Salida: Hacer algo antes de llamar a func
     #        ¡Hola!
 

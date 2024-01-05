@@ -115,6 +115,8 @@ Usando funciones como argumento de otras:
 
 Por último, podemos hacer que una función tenga a otra como entrada y que además la ejecute dentro de sí misma. En el siguiente ejemplo podemos ver como ``hazEstoAntesDeHola()`` es una función que de alguna forma encapsula a la función que se le pase como parámetro, añadiendo una determinada funcionalidad. En este ejemplo simplemente imprimimos algo por pantalla antes de llamar a la función.
 
+Ejemplo 04:
+
 .. code:: python
 
     def hola():

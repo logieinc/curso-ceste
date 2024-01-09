@@ -186,29 +186,7 @@ Donde A recibe como parámetro B para dar como salida a C. Esta es una pequeña 
 
 Tal vez te preguntes ahora porqué no hemos usado @ en el código. Esto es debido a que @ es simplemente una forma de hacerlo más corto, pero ambas opciones son perfectamente válidas.
 
-.. code:: python
-
-    @nuevo_decorador
-    def funcion_a_decorar():
-        print("Soy la función que necesita ser decorada")
-
-    funcion_a_decorar()
-    #Salida: Haciendo algo antes de llamar a a_func()
-    #        Soy la función que necesita ser decorada
-    #        Haciendo algo después de llamar a a_func()
-
-    #El uso de @nuevo_decorador es simplemente una forma acortada
-    #de hacer lo siguiente.
-    funcion_a_decorar = nuevo_decorador(funcion_a_decorar)
-
-Una vez visto esto, hay un pequeño problema con el código. Si ejecutamos lo siguiente:
-
-.. code:: python
-
-    print(funcion_a_decorar.__name__)
-    # Output: envuelveLaFuncion
-
-Nos encontramos con un comportamiento un tanto inesperado. Nuestra función es ``funcion_a_decorar`` pero al haberla envuelto con el decorador es en realidad ``envuelveLaFuncion``, por lo que sobreescribe el nombre y el *docstring* de la misma, algo que no es muy conveniente. Por suerte, Python nos da una forma de arreglar este problema usando ``functools.wraps``. Vamos a modificar nuestro ejemplo anterior haciendo uso de esta herramienta.
+Python nos da una forma de arreglar este problema usando ``functools.wraps``
 
 .. code:: python
 
@@ -229,7 +207,7 @@ Nos encontramos con un comportamiento un tanto inesperado. Nuestra función es `
     print(funcion_a_decorar.__name__)
     # Salida: funcion_a_decorar
 
-Mucho mejor ahora. Veamos también unos fragmentos de código muy usados.
+Veamos también unos fragmentos de código muy usados.
 
 **Ejemplos:**
 
@@ -368,25 +346,22 @@ Por suerte, las clases también pueden ser usadas para crear decoradores. Vamos 
 
     class logit(object):
 
-        _logfile = 'out.log'
-    
+        _logfile = 'out.log'
         def __init__(self, func):
             self.func = func
 
-        def __call__(self, *args):
-            log_string = self.func.__name__ + " fue llamada"
+        def __call__(self, *args):
+            log_string = self.func.__name__ + " fue llamada"
             print(log_string)
             # Abre el fichero de log y escribe
-            with open(self._logfile, 'a') as opened_file:
+            with open(self._logfile, 'a') as opened_file:
                 # Escribimos el contenido
                 opened_file.write(log_string + '\n')
             # Enviamos una notificación (ver método)
             self.notify()
 
-            # Devuelve la función base
-            return self.func(*args)
-
-            
+            # Devuelve la función base
+            return self.func(*args)
 
         def notify(self):
             # Esta clase simplemente escribe el log, nada más.
@@ -396,9 +371,9 @@ Esta implementación es mucho más limpia que con la función anidada. Por otro 
 
 .. code:: python
 
-    logit._logfile = 'out2.log' # Si queremos usar otro nombre
-    @logit
-    def myfunc1():
+    logit._logfile = 'out2.log' # Si queremos usar otro nombre
+    @logit
+    def myfunc1():
         pass
 
     myfunc1()

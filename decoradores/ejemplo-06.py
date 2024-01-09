@@ -2,6 +2,9 @@
 
 from functools import wraps
 
+from urllib3.util import request
+
+
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):

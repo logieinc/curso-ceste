@@ -31,5 +31,3 @@ def myfunc2():
 myfunc2()
 # Salida: myfunc2  fue llamada
 # Se crea un fichero func2.log
-
-myfunc2("pepe.log")

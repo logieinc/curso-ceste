@@ -1,5 +1,4 @@
 # Clases Decoradoras
-
 import time
 
 def medir_tiempo_ejecucion(clase):
@@ -17,7 +16,6 @@ def medir_tiempo_ejecucion(clase):
                 return wrapper
             else:
                 return atributo_original
-
     return ClaseDecorada
 
 # Uso del decorador en una clase

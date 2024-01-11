@@ -473,6 +473,36 @@ Utilizado para convertir un método en una propiedad. Permite el acceso a un mé
         def x(self, valor):
             self._x = valor
 
+.. code:: python
+
+    class Circulo:
+        def __init__(self, radio):
+            self._radio = radio
+
+        @property
+        def radio(self):
+            return self._radio
+
+        @property
+        def area(self):
+            return 3.14 * self._radio**2
+
+        @property
+        def diametro(self):
+            return 2 * self._radio
+
+    # Crear una instancia de la clase Circulo
+    mi_circulo = Circulo(radio=5)
+
+    # Acceder a la propiedad 'radio' como si fuera un atributo
+    print(f"Radio del círculo: {mi_circulo.radio}")
+
+    # Acceder a la propiedad 'area' (calculada) como si fuera un atributo
+    print(f"Área del círculo: {mi_circulo.area}")
+
+    # Acceder a la propiedad 'diametro' (calculada) como si fuera un atributo
+    print(f"Diametro del círculo: {mi_circulo.diametro}")
+
 
 @classmethod:
 Indica que un método de clase debe ser llamado en lugar de un método de instancia. Recibe la clase como primer argumento en lugar de la instancia.
@@ -489,6 +519,37 @@ Indica que un método de clase debe ser llamado en lugar de un método de instan
         def obtener_contador(cls):
             return cls.contador
 
+.. code:: python
+
+    class Persona:
+        contador_personas = 0
+
+        def __init__(self, nombre, edad):
+            self.nombre = nombre
+            self.edad = edad
+            Persona.contador_personas += 1
+
+        @classmethod
+        def crear_persona(cls, nombre, edad):
+            # Utiliza el constructor de clase para crear una nueva instancia de Persona
+            return cls(nombre, edad)
+
+        @classmethod
+        def obtener_contador(cls):
+            # Accede a un atributo de clase desde el método de clase
+            return cls.contador_personas
+
+    # Crear una persona usando el método de clase
+    nueva_persona = Persona.crear_persona("Juan", 25)
+
+    # Acceder a los atributos de la persona creada
+    print(f"Nombre: {nueva_persona.nombre}, Edad: {nueva_persona.edad}")
+
+    # Obtener el contador de personas utilizando el método de clase
+    contador_actual = Persona.obtener_contador()
+    print(f"Número total de personas: {contador_actual}")
+
+
 @staticmethod:
 Indica que un método no depende del estado de la instancia ni de la clase y, por lo tanto, no recibe la instancia o la clase como primer argumento.
 
@@ -498,6 +559,27 @@ Indica que un método no depende del estado de la instancia ni de la clase y, po
         @staticmethod
         def sumar(a, b):
             return a + b
+
+.. code:: python
+
+    class UtilidadesMatematicas:
+        @staticmethod
+        def sumar(a, b):
+            # Método estático que realiza la suma de dos números
+            return a + b
+
+        @staticmethod
+        def restar(a, b):
+            # Método estático que realiza la resta de dos números
+            return a - b
+
+    # Uso de los métodos estáticos sin crear una instancia de la clase
+    resultado_suma = UtilidadesMatematicas.sumar(10, 5)
+    print(f"Resultado de la suma: {resultado_suma}")
+
+    resultado_resta = UtilidadesMatematicas.restar(10, 5)
+    print(f"Resultado de la resta: {resultado_resta}")
+
 
 
 classmethod vs @staticmethod:

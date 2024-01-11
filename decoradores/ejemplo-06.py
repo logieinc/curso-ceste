@@ -1,5 +1,4 @@
-# Wraps  & Decoradores con argumentos
-
+# Wraps & Decoradores con argumentos
 from functools import wraps
 
 def mi_decorador(func):

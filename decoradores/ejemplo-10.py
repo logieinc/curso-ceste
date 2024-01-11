@@ -1,3 +1,4 @@
+# Capturando exceptions con decoradores
 def capturar_excepcion(metodo):
     def wrapper(*args, **kwargs):
         try:

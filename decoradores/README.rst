@@ -11,13 +11,13 @@ Es importante aclarar que los decoradores forman parte de un `patrón de diseño
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Los decoradores juegan un papel crucial en la programación en Python por varias razones:
 
-a) Reutilización del código:
+A - Reutilización del código:
 Los decoradores permiten separar las preocupaciones transversales, como el registro, la validación, la autenticación o el almacenamiento en caché, de la lógica central de las funciones o clases. Esto favorece la reutilización del código y la modularidad.
 
-b) Facilidad de lectura y mantenimiento:
+B - Facilidad de lectura y mantenimiento:
 Los decoradores proporcionan una forma limpia y concisa de añadir funcionalidad al código existente sin saturar la implementación original. Mejoran la legibilidad del código aislando comportamientos específicos y facilitando su comprensión y mantenimiento.
 
-c) Metaprogramación y extensibilidad:
+C - Metaprogramación y extensibilidad:
 Los decoradores permiten la modificación dinámica del código en tiempo de ejecución, lo que posibilita técnicas avanzadas de metaprogramación. Proporcionan un mecanismo flexible para ampliar y personalizar el comportamiento de funciones o clases sin modificar su definición original.
 
 A continuación veremos lo que son, cómo se crean y cómo podemos usarlos.
@@ -222,9 +222,7 @@ Ejemplo 05-b:
     print(funcion_a_decorar.__name__)
     # Salida: funcion_a_decorar
 
-Veamos también unos fragmentos de código muy usados.
-
-**Ejemplos:**
+Veamos variante al codigo anteriormente citado.
 
 Ejemplo 05-c:
 

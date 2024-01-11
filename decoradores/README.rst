@@ -7,6 +7,19 @@ Los decoradores son funciones que modifican la funcionalidad de otras funciones,
 
 Es importante aclarar que los decoradores forman parte de un `patrón de diseño de software <https://refactoring.guru/es/design-patterns/decorator>`__, entendiendo la frase "patrón de diseño" se refiere a soluciones generales y reutilizables para problemas comunes en el diseño de software.
 
+¿Por qué los decoradores son importantes en Python?:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Los decoradores juegan un papel crucial en la programación en Python por varias razones:
+
+a) Reutilización del código:
+Los decoradores permiten separar las preocupaciones transversales, como el registro, la validación, la autenticación o el almacenamiento en caché, de la lógica central de las funciones o clases. Esto favorece la reutilización del código y la modularidad.
+
+b) Facilidad de lectura y mantenimiento:
+Los decoradores proporcionan una forma limpia y concisa de añadir funcionalidad al código existente sin saturar la implementación original. Mejoran la legibilidad del código aislando comportamientos específicos y facilitando su comprensión y mantenimiento.
+
+c) Metaprogramación y extensibilidad:
+Los decoradores permiten la modificación dinámica del código en tiempo de ejecución, lo que posibilita técnicas avanzadas de metaprogramación. Proporcionan un mecanismo flexible para ampliar y personalizar el comportamiento de funciones o clases sin modificar su definición original.
+
 A continuación veremos lo que son, cómo se crean y cómo podemos usarlos.
 
 Todo es un objeto en Python:
@@ -188,6 +201,8 @@ Tal vez te preguntes ahora porqué no hemos usado @ en el código. Esto es debid
 
 Python nos da una forma de arreglar este problema usando ``functools.wraps``
 
+Ejemplo 05-b:
+
 .. code:: python
 
     from functools import wraps
@@ -210,6 +225,8 @@ Python nos da una forma de arreglar este problema usando ``functools.wraps``
 Veamos también unos fragmentos de código muy usados.
 
 **Ejemplos:**
+
+Ejemplo 05-c:
 
 .. code:: python
 
@@ -235,60 +252,6 @@ Veamos también unos fragmentos de código muy usados.
     # Salida: La función no se ejecutará
 
 Nota: ``@wraps`` toma una función para ser decorada y añade la funcionalidad de copiar el nombre de la función, el *docstring*, los argumentos y otros parámetros asociados. Esto nos permite acceder a los elementos de la función a decorar una vez decorada. Es decir, resuelve el problema que vimos con anterioridad.
-
-
-Casos de uso:
-~~~~~~~~~~
-
-A continuación veremos algunos áreas en las que los decoradores son realmente útiles.
-
-
-Autorización
-~~~~~~~~~~~~
-
-Los decoradores permiten verificar si alguien está o no autorizado a usar una determinada función, por ejemplo en una aplicación web. Son muy usados en *frameworks* como Flask o Django. Aquí te mostramos como usar un decorador para verificar que se está autenticado.
-
-
-**Ejemplo :**
-
-.. code:: python
-
-    from functools import wraps
-
-    def requires_auth(f):
-        @wraps(f)
-        def decorated(*args, **kwargs):
-            auth = request.authorization
-            if not auth or not check_auth(auth.username, auth.password):
-                authenticate()
-            return f(*args, **kwargs)
-        return decorated
-
-Iniciar sesión
-~~~~~~~~~~~~
-
-El inicio de sesión es otra de las áreas donde los decoradores son muy útiles. Vamos un ejemplo:
-
-.. code:: python
-
-    from functools import wraps
-
-    def logit(func):
-        @wraps(func)
-        def with_logging(*args, **kwargs):
-            print(func.__name__ + " was called")
-            return func(*args, **kwargs)
-        return with_logging
-
-    @logit
-    def addition_func(x):
-       """Función suma"""
-       return x + x
-
-
-    result = addition_func(4)
-    # Salida: addition_func was called
-
 
 Decoradores con argumentos
 ^^^^^^^^^^^^^^^^^^^^^^^^^

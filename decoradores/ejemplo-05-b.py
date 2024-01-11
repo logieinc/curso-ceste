@@ -1,7 +1,5 @@
 # Tu primer decorador
-
 from functools import wraps
-
 
 def nuevo_decorador(a_func):
     @wraps(a_func)

@@ -87,12 +87,13 @@ Ejemplo 02:
     # se llama en realidad también a saluda() y bienvenida()
     # Sin embargo estas dos últimas funciones no están accesibles
     # fuera de hola(). Si lo intentamos, tendremos un error.
-
-    saluda()
+    try:
+        saluda()
+    except Exception as e:
+        print('Ocurrió un Exception. {}'.format(e.args[-1]))
     #Saluda: NameError: name 'saluda' is not defined
 
 Ya hemos visto entonces como podemos definir funciones dentro de otras funciones. En otras palabras, podemos crear funciones anidadas. Pero para entender bien los decoradores, necesitamos ir un paso más allá. Las funciones también pueden devolver otras funciones.
-
 
 Devolviendo funciones desde funciones:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

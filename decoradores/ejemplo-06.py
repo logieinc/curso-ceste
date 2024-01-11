@@ -1,4 +1,4 @@
-# Wraps
+# Wraps  & Decoradores con argumentos
 
 from functools import wraps
 

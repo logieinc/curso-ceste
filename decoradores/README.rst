@@ -254,8 +254,8 @@ Ejemplo 05-c:
 Nota: ``@wraps`` toma una función para ser decorada y añade la funcionalidad de copiar el nombre de la función, el *docstring*, los argumentos y otros parámetros asociados. Esto nos permite acceder a los elementos de la función a decorar una vez decorada. Es decir, resuelve el problema que vimos con anterioridad.
 
 
-Wraps
-^^^^^^
+Wraps & Decoradores con argumentos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Hemos visto ya el uso de ``@wraps``, y tal vez te preguntes ¿pero no es también un decorador? De hecho si te fijas acepta un parámetro (que en nuestro caso es una función). A continuación te explicamos como crear un decorador que también acepta parámetros de entrada.
 
@@ -291,13 +291,12 @@ Ejemplo 06:
     funcion_con_argumentos(3, 5)
 
 
-Decoradores con argumentos
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Anidando un Decorador dentro de una Función
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Vayamos de vuelta al ejemplo de inicio de sesión, y creemos un *wraper* que permita especificar el fichero de salida que queremos usar para el fichero de *log*. Si te fijas, el decorador ahora acepta un parámetro de entrada.
+Puedes anidar un decorador dentro de una función, lo cual puede ser útil para personalizar el comportamiento del decorador basado en ciertos parámetros locales. Aquí tienes un ejemplo:
+
+Ejemplo 07:
 
 .. code:: python
 
@@ -336,62 +335,118 @@ Vayamos de vuelta al ejemplo de inicio de sesión, y creemos un *wraper* que per
 Clases Decoradoras
 ~~~~~~~~~~~~~~~~~
 
-Llegados a este punto ya tenemos el decorador *logit* creado en el apartado anterior funcionando en producción, pero algunas partes de nuestra aplicación son críticas, y si se produce un fallo este necesitará atención inmediata. Vamos a suponer que en determinadas ocasiones quieres simplemente escribir en el *log* (como hemos hecho), pero en otras quieres que se envíe un correo. En una aplicación como esta podríamos usar la herencia, pero hasta ahora sólo hemos usado decoradores.
+Siguiendo la linea de decoradores, ya en el caso anterior decorador sobre funciones, también podemos aplicarlo a las clases en python
 
-Por suerte, las clases también pueden ser usadas para crear decoradores. Vamos a volver a definir *logit*, pero en este caso como una clase en vez de con una función.
+Decorar una clase en Python conlleva varias ventajas, similar a decorar funciones. Aquí hay algunas ventajas específicas al decorar clases:
 
-.. code:: python
+Reutilización de Código:
+    Puedes aplicar un decorador a múltiples clases, lo que permite la reutilización del código y la consistencia en el comportamiento decorado.
 
-    class logit(object):
+Separación de Preocupaciones:
+    Los decoradores permiten separar las preocupaciones relacionadas con la funcionalidad específica del código de la lógica principal de la clase.
 
-        _logfile = 'out.log'
-        def __init__(self, func):
-            self.func = func
+Añadir Comportamiento sin Modificar el Código Fuente:
+    Puedes agregar funcionalidades adicionales a una clase sin modificar directamente su código fuente. Esto es útil cuando no tienes control sobre la implementación de la clase o cuando deseas mantener un código limpio y modular.
 
-        def __call__(self, *args):
-            log_string = self.func.__name__ + " fue llamada"
-            print(log_string)
-            # Abre el fichero de log y escribe
-            with open(self._logfile, 'a') as opened_file:
-                # Escribimos el contenido
-                opened_file.write(log_string + '\n')
-            # Enviamos una notificación (ver método)
-            self.notify()
+Mejora de la Legibilidad:
+    Los decoradores pueden mejorar la legibilidad del código al encapsular aspectos específicos del comportamiento de la clase en funciones separadas. Esto facilita la comprensión del propósito de cada parte del código.
 
-            # Devuelve la función base
-            return self.func(*args)
+Extensibilidad:
+    Los decoradores ofrecen una forma flexible de extender el comportamiento de una clase. Puedes crear nuevos decoradores y aplicarlos según sea necesario sin modificar la clase original.
 
-        def notify(self):
-            # Esta clase simplemente escribe el log, nada más.
-            pass
+Mejora de la Mantenibilidad:
+    Al separar las responsabilidades y mantener una estructura modular, el código decorado tiende a ser más fácil de mantener y modificar sin afectar otras partes del sistema.
 
-Esta implementación es mucho más limpia que con la función anidada. Por otro lado, la función puede ser envuelta de la misma forma que veníamos usando hasta ahora, usando ``@``.
+Logging y Depuración:
+    Puedes utilizar decoradores para agregar lógica de registro (logging) o funciones de depuración a los métodos de una clase sin afectar la implementación original. Esto facilita la identificación y solución de problemas.
 
-.. code:: python
+Aplicación Selectiva de Comportamientos:
+    Los decoradores permiten aplicar selectivamente ciertos comportamientos a instancias específicas de una clase o a todas las instancias, según sea necesario.
 
-    logit._logfile = 'out2.log' # Si queremos usar otro nombre
-    @logit
-    def myfunc1():
-        pass
-
-    myfunc1()
-    # Output: myfunc1 fue llamada
-
-Ahora, vamos a crear una subclase de *logit* para añadir la funcionalidad de enviar un email. Enviaremos el email de manera ficticia.
+En resumen, decorar clases en Python proporciona una forma elegante y poderosa de extender y modificar el comportamiento de las clases sin cambiar su código fuente, lo que contribuye a la modularidad y la legibilidad del código.
 
 .. code:: python
 
-    class email_logit(logit):
-        '''
-        Implementación de logit con envío de email
-        '''
-        def __init__(self, email='admin@myproject.com', *args, **kwargs):
-            self.email = email
-            super(email_logit, self).__init__(*args, **kwargs)
+    import time
 
-        def notify(self):
-            # Enviamos email a self.email
-            # Código para enviar email
-            # ...
-            pass
+    def medir_tiempo_ejecucion(clase):
+        class ClaseDecorada(clase):
+            def __getattribute__(self, name):
+                atributo_original = super().__getattribute__(name)
+                if callable(atributo_original):
+                    def wrapper(*args, **kwargs):
+                        inicio = time.time()
+                        resultado = atributo_original(*args, **kwargs)
+                        fin = time.time()
+                        tiempo_ejecucion = fin - inicio
+                        print(f"El método '{name}' tomó {tiempo_ejecucion:.5f} segundos en ejecutarse.")
+                        return resultado
+                    return wrapper
+                else:
+                    return atributo_original
 
+        return ClaseDecorada
+
+    # Uso del decorador en una clase
+    @medir_tiempo_ejecucion
+    class OtraClase:
+        def metodo_lento(self):
+            time.sleep(2)
+            print("¡Método ejecutado!")
+
+    # Crear una instancia de la clase decorada
+    otra_instancia = OtraClase()
+
+    # Llamar a un método
+    otra_instancia.metodo_lento()
+
+
+Apilando decoradores
+~~~~~~~~~~~~~~~~~
+
+En Python, es posible apilar varios decoradores sobre una misma función. La apilación de decoradores significa que puedes aplicar más de un decorador a una función, en el orden en que se colocan. Cada decorador modifica o agrega comportamiento a la función de manera acumulativa.
+
+Aquí tienes un ejemplo de cómo puedes usar decoradores apilados:
+
+En este ejemplo, los decoradores se aplican en el orden inverso al que aparecen. La función saludar primero pasa a través del decorador convertir_mayusculas, luego por agregar_prefijo y, finalmente, por invertir_resultado. Puedes experimentar con el orden de los decoradores según tus necesidades y el efecto que desees lograr.
+
+La apilación de decoradores es una técnica poderosa y flexible en Python que permite componer funciones con diferentes funcionalidades de manera modular.
+
+Ejemplo 09:
+
+.. code:: python
+
+    def convertir_mayusculas(func):
+        def wrapper(*args, **kwargs):
+            resultado = func(*args, **kwargs)
+            return resultado.upper()
+        return wrapper
+
+    # Decorador 2: Agregar un prefijo al resultado
+    def agregar_prefijo(prefijo):
+        def decorador(func):
+            def wrapper(*args, **kwargs):
+                resultado = func(*args, **kwargs)
+                return f"{prefijo} {resultado}"
+            return wrapper
+        return decorador
+
+    # Decorador 3: Invertir el resultado
+    def invertir_resultado(func):
+        def wrapper(*args, **kwargs):
+            resultado = func(*args, **kwargs)
+            return resultado[::-1]
+        return wrapper
+
+    # Apilación de decoradores
+    @invertir_resultado
+    @agregar_prefijo("Resultado:")
+    @convertir_mayusculas
+    def saludar(nombre):
+        return f"Hola, {nombre}!"
+
+    # Llamada a la función decorada
+    resultado_final = saludar("John")
+
+    # Resultado
+    print(resultado_final)

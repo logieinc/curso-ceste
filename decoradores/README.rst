@@ -254,14 +254,16 @@ Ejemplo 05-c:
 Nota: ``@wraps`` toma una función para ser decorada y añade la funcionalidad de copiar el nombre de la función, el *docstring*, los argumentos y otros parámetros asociados. Esto nos permite acceder a los elementos de la función a decorar una vez decorada. Es decir, resuelve el problema que vimos con anterioridad.
 
 
-Decoradores con argumentos
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Wraps
+^^^^^^
 
 Hemos visto ya el uso de ``@wraps``, y tal vez te preguntes ¿pero no es también un decorador? De hecho si te fijas acepta un parámetro (que en nuestro caso es una función). A continuación te explicamos como crear un decorador que también acepta parámetros de entrada.
 
 @wraps es un decorador en Python que se utiliza para preservar la información de la función original cuando se aplica otro decorador a esa función. Esto es especialmente útil cuando estás creando decoradores personalizados y quieres asegurarte de que la función decorada conserve su nombre, su documentación y otros metadatos importantes.
 
 Cuando aplicas un decorador a una función sin usar @wraps, a menudo pierdes información sobre la función original. @wraps resuelve este problema al copiar los metadatos de la función original al decorador.
+
+Ejemplo 06:
 
 .. code:: python
 
@@ -288,6 +290,9 @@ Cuando aplicas un decorador a una función sin usar @wraps, a menudo pierdes inf
     # Llamamos a la función decorada
     funcion_con_argumentos(3, 5)
 
+
+Decoradores con argumentos
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Anidando un Decorador dentro de una Función
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

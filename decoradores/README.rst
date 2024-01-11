@@ -345,6 +345,8 @@ Reutilización de Código:
 Separación de Preocupaciones:
     Los decoradores permiten separar las preocupaciones relacionadas con la funcionalidad específica del código de la lógica principal de la clase.
 
+    La Separación de Preocupaciones (SoC, por sus siglas en inglés "Separation of Concerns") es un principio de diseño de software que aboga por dividir un programa en componentes distintos, cada uno de los cuales se ocupa de una preocupación o responsabilidad específica. Este enfoque facilita la comprensión, el mantenimiento y la modificación del código, ya que cada componente se centra en una tarea clara y separada
+
 Añadir Comportamiento sin Modificar el Código Fuente:
     Puedes agregar funcionalidades adicionales a una clase sin modificar directamente su código fuente. Esto es útil cuando no tienes control sobre la implementación de la clase o cuando deseas mantener un código limpio y modular.
 

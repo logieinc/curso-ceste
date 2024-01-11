@@ -1,5 +1,8 @@
 # Capturando exceptions con decoradores
+from functools import wraps
+
 def capturar_excepcion(metodo):
+    @wraps(metodo)
     def wrapper(*args, **kwargs):
         try:
             return metodo(*args, **kwargs)

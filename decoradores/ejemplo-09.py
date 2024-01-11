@@ -33,4 +33,5 @@ def saludar(nombre):
 resultado_final = saludar("John")
 
 # Resultado
+print()
 print(resultado_final)

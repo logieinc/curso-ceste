@@ -450,3 +450,70 @@ Ejemplo 09:
 
     # Resultado
     print(resultado_final)
+
+Decoradores integrados
+~~~~~~~~~~~~~~~~~
+
+Python incluye algunos decoradores integrados que proporcionan funcionalidades específicas. Aquí hay algunos de los decoradores incorporados más comunes en Python:
+
+@property:
+Utilizado para convertir un método en una propiedad. Permite el acceso a un método como si fuera un atributo, sin necesidad de llamarlo como una función.
+
+.. code:: python
+
+    class MiClase:
+        def __init__(self):
+            self._x = 0
+
+        @property
+        def x(self):
+            return self._x
+
+        @x.setter
+        def x(self, valor):
+            self._x = valor
+
+
+@classmethod:
+Indica que un método de clase debe ser llamado en lugar de un método de instancia. Recibe la clase como primer argumento en lugar de la instancia.
+
+.. code:: python
+
+    class MiClase:
+        contador = 0
+
+        def __init__(self):
+            MiClase.contador += 1
+
+        @classmethod
+        def obtener_contador(cls):
+            return cls.contador
+
+@staticmethod:
+Indica que un método no depende del estado de la instancia ni de la clase y, por lo tanto, no recibe la instancia o la clase como primer argumento.
+
+.. code:: python
+
+    class Utilidades:
+        @staticmethod
+        def sumar(a, b):
+            return a + b
+
+
+classmethod vs @staticmethod:
+@classmethod y @staticmethod son decoradores relacionados pero tienen diferencias en la forma en que manejan los argumentos. @classmethod recibe la clase como primer argumento, mientras que @staticmethod no recibe ni la instancia ni la clase automáticamente.
+
+.. code:: python
+
+    class Ejemplo:
+        @classmethod
+        def metodo_clase(cls, arg1, arg2):
+            # cls es la clase
+            pass
+
+        @staticmethod
+        def metodo_estatico(arg1, arg2):
+            # No se pasa la clase automáticamente
+            pass
+
+

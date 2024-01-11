@@ -230,6 +230,7 @@ Ejemplo 05-c:
 .. code:: python
 
     from functools import wraps
+
     def nombre_decorador(f):
         @wraps(f)
         def decorada(*args, **kwargs):
@@ -252,10 +253,40 @@ Ejemplo 05-c:
 
 Nota: ``@wraps`` toma una función para ser decorada y añade la funcionalidad de copiar el nombre de la función, el *docstring*, los argumentos y otros parámetros asociados. Esto nos permite acceder a los elementos de la función a decorar una vez decorada. Es decir, resuelve el problema que vimos con anterioridad.
 
+
 Decoradores con argumentos
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Hemos visto ya el uso de ``@wraps``, y tal vez te preguntes ¿pero no es también un decorador? De hecho si te fijas acepta un parámetro (que en nuestro caso es una función). A continuación te explicamos como crear un decorador que también acepta parámetros de entrada.
+
+@wraps es un decorador en Python que se utiliza para preservar la información de la función original cuando se aplica otro decorador a esa función. Esto es especialmente útil cuando estás creando decoradores personalizados y quieres asegurarte de que la función decorada conserve su nombre, su documentación y otros metadatos importantes.
+
+Cuando aplicas un decorador a una función sin usar @wraps, a menudo pierdes información sobre la función original. @wraps resuelve este problema al copiar los metadatos de la función original al decorador.
+
+.. code:: python
+
+    from functools import wraps
+
+    def mi_decorador(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            print(f"Ejecutando {func.__name__} con argumentos: {args} y kwargs: {kwargs}")
+            result = func(*args, **kwargs)
+            print(f"{func.__name__} ha terminado")
+            return result
+        return wrapper
+
+    @mi_decorador
+    def funcion_con_argumentos(a, b):
+        """Esta es la documentación de funcion_con_argumentos."""
+        print(f"Suma de {a} y {b}: {a + b}")
+
+    # Probemos acceder a algunos metadatos de la función original
+    print(f"Nombre de la función decorada: {funcion_con_argumentos.__name__}")
+    print(f"Documentación de la función decorada: {funcion_con_argumentos.__doc__}")
+
+    # Llamamos a la función decorada
+    funcion_con_argumentos(3, 5)
 
 
 Anidando un Decorador dentro de una Función

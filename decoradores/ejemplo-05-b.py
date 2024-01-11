@@ -18,3 +18,4 @@ def funcion_a_decorar():
 
 print(funcion_a_decorar.__name__)
 # Salida: funcion_a_decorar
+funcion_a_decorar()

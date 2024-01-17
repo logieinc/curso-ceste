@@ -48,6 +48,8 @@ En Python, estos métodos se pueden utilizar de la siguiente manera:
 Todo es un objeto en Python:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Ejemplo 01:
+
 .. code:: python
     # Importar la biblioteca requests
     import requests
@@ -60,6 +62,8 @@ Todo es un objeto en Python:
 
     # Imprimir el contenido de la respuesta
     print(data)
+
+Ejemplo 02:
 
 .. code:: python
     # Importar la biblioteca requests

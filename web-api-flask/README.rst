@@ -1,5 +1,5 @@
 Conexión a API y Uso de Web APIs con Requests
-----------
+--------------------------------------------------
 
 **¿Qué es una Web API?**
 
@@ -51,6 +51,7 @@ Todo es un objeto en Python:
 Ejemplo 01:
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 
@@ -66,6 +67,7 @@ Ejemplo 01:
 Ejemplo 02:
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 
@@ -81,6 +83,7 @@ Ejemplo 02:
 
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 
@@ -96,6 +99,7 @@ Ejemplo 02:
 
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 
@@ -110,6 +114,7 @@ Ejemplo 02:
 
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 
@@ -124,6 +129,7 @@ Ejemplo 02:
 
 
 .. code:: python
+
     # Importar la biblioteca requests
     import requests
 

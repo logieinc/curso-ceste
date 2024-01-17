@@ -2,13 +2,10 @@
 import requests
 import json
 
-# Importar la biblioteca requests
-import requests
-import json
-
 # Realizar una solicitud POST
 headers = {"accept": "*/*", "Content-Type" : "application/json"}
-response = requests.get('http://localhost:8000/api/people/Rodriguez', headers=headers)
+data = {'fname': 'John', 'lname': "ZZZZ"}
+response = requests.post('http://localhost:8000/api/people', json=data, headers=headers)
 
 # Obtener el código de estado de la respuesta
 status_code = response.status_code

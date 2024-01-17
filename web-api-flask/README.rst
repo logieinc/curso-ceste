@@ -1,4 +1,5 @@
 Conexión a API y Uso de Web APIs con Requests
+----------
 
 **¿Qué es una Web API?**
 
@@ -43,6 +44,9 @@ Estos métodos se utilizan para realizar diferentes acciones en una API, como:
 * **OPTIONS:** Obtener información sobre los métodos HTTP admitidos por una API.
 
 En Python, estos métodos se pueden utilizar de la siguiente manera:
+
+Todo es un objeto en Python:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: python
     # Importar la biblioteca requests

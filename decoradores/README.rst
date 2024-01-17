@@ -397,7 +397,7 @@ Ejemplo 08-a:
     objeto_decorado.nuevo_metodo()  # Método agregado por el decorador
     print(objeto_decorado.nueva_atributo)  # Atributo agregado por el decorador
 
-Ejemplo 08:
+Ejemplo 08-b:
 
 .. code:: python
 

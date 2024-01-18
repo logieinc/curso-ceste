@@ -48,51 +48,72 @@ En Python, estos métodos se pueden utilizar de la siguiente manera:
 Todo es un objeto en Python:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Ejemplo 01:
+
 .. code:: python
 
     # Importar la biblioteca requests
     import requests
+    import json
 
     # Realizar una solicitud GET
-    response = requests.get('https://api.example.com/')
+    headers = {"accept": "*/*"}
+    response = requests.get('http://localhost:8000/api/people', headers=headers)
 
     # Obtener el contenido de la respuesta
     data = response.json()
 
     # Imprimir el contenido de la respuesta
-    print(data)
+    print(json.dumps(data, indent=2))
+
+Ejemplo 02:
 
 .. code:: python
 
     # Importar la biblioteca requests
     import requests
+    import json
 
     # Realizar una solicitud POST
-    data = {'name': 'John Doe', 'age': 30}
-    response = requests.post('https://api.example.com/users', data=data)
+    headers = {"accept": "*/*", "Content-Type" : "application/json"}
+    data = {'fname': 'John', 'lname': "Doe"}
+    response = requests.post('http://localhost:8000/api/people', json=data, headers=headers)
 
     # Obtener el código de estado de la respuesta
     status_code = response.status_code
+    data_response = response.json()
 
     # Imprimir el código de estado de la respuesta
-    print(status_code)
+    print()
+    print(f"Status code => { status_code}")
+    print()
+    print(json.dumps(data_response, indent=2))
 
+Ejemplo 04:
 
 .. code:: python
 
     # Importar la biblioteca requests
     import requests
+    import json
 
     # Realizar una solicitud PUT
-    data = {'name': 'Jane Doe'}
-    response = requests.put('https://api.example.com/users/1', data=data)
+    headers = {"accept": "*/*", "Content-Type" : "application/json"}
+    data = {'fname': 'Estela', 'lname': "Quiroga"}
+    response = requests.put('http://localhost:8000/api/people/Rodriguez', json=data, headers=headers)
 
     # Obtener el código de estado de la respuesta
     status_code = response.status_code
+    data_response = response.json()
 
     # Imprimir el código de estado de la respuesta
-    print(status_code)
+    print()
+    print(f"Status code => { status_code}")
+    print()
+    print(json.dumps(data_response, indent=2))
 
+
+Ejemplo 04:
 
 .. code:: python
 
@@ -100,13 +121,17 @@ Todo es un objeto en Python:
     import requests
 
     # Realizar una solicitud DELETE
-    response = requests.delete('https://api.example.com/users/1')
+    headers = {"accept": "*/*", "Content-Type" : "application/json"}
+    response = requests.delete('http://localhost:8000/api/people/Rodriguez', headers=headers)
 
     # Obtener el código de estado de la respuesta
     status_code = response.status_code
 
     # Imprimir el código de estado de la respuesta
-    print(status_code)
+    print()
+    print(f"Status code => { status_code}")
+    print()
+    print(response.text)
 
 
 .. code:: python
@@ -198,7 +223,6 @@ Las Web APIs son una herramienta poderosa que puede ser utilizada por desarrolla
 
     flask run
 
-
 **Ventajas de Flask:**
 
 * Simple y fácil de aprender, incluso para principiantes.
@@ -232,18 +256,11 @@ El siguiente ejemplo muestra cómo crear una aplicación web simple con Flask:
     if __name__ == '__main__':
         app.run()
 
-Este código crea una aplicación web con una sola ruta, `/`, que devuelve la cadena "Hola, mundo!". Para ejecutar la aplicación, puede usar el siguiente comando:
-
-.. code : python
-
-    flask run
-
+Este código crea una aplicación web con una sola ruta, `/`, que devuelve la cadena "Hola, mundo!"
 
 Esto abrirá una instancia de la aplicación en el puerto 5000. Puede acceder a la aplicación en su navegador web en la siguiente URL:
 
-```
-http://localhost:5000
-```
+    http://localhost:5000
 
 **Conclusiones**
 

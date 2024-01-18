@@ -1,3 +1,4 @@
+# Importar la biblioteca requests
 import requests
 
 # Realizar una solicitud DELETE

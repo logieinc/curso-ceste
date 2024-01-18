@@ -1,6 +1,8 @@
 Conexión a API y Uso de Web APIs con Requests
 --------------------------------------------------
 
+`Curso gráfico MIRO <https://miro.com/welcomeonboard/M2owWWFuRHBwaXJxbm1rR2pnWjdvazdBZ2l1ZUdWVU1taTAxWExqNDdyd1Q0d2htMGszSEw1TWJ3ZU90dVpZVnwzNDU4NzY0NTY3ODY3MjMyMTY2fDI=?share_link_id=544290942241>`__
+
 **¿Qué es una Web API?**
 
 Una Web API, o Application Programming Interface, es un conjunto de métodos y datos que se exponen a través de Internet para que los desarrolladores puedan interactuar con ellos. Las Web APIs se utilizan para una amplia gama de propósitos, como proporcionar acceso a datos, realizar tareas automatizadas o crear nuevas aplicaciones.
@@ -243,6 +245,8 @@ Las Web APIs son una herramienta poderosa que puede ser utilizada por desarrolla
 
 El siguiente ejemplo muestra cómo crear una aplicación web simple con Flask:
 
+Ejemplo 06:
+
 .. code: python
 
     from flask import Flask
@@ -266,3 +270,78 @@ Esto abrirá una instancia de la aplicación en el puerto 5000. Puede acceder a 
 
 Flask es un framework de desarrollo web flexible y poderoso que es ideal para una amplia gama de proyectos. Es una buena opción para principiantes y desarrolladores experimentados por igual.
 
+**Integración en Python de OpenAPI y Swagger:**
+
+**Conceptos clave:**
+
+* **Especificación OpenAPI (OAS):** Un formato estandarizado para describir APIs REST, que permite una documentación, generación de clientes y herramientas consistentes.
+* **Swagger:** Un conjunto de herramientas para implementar OpenAPI, que incluye una interfaz de usuario para exploración visual y generación de código.
+
+**Bibliotecas y marcos de Python:**
+
+* **Generación de documentación OpenAPI:**
+    * **Flask-RESTX:** Se integra a la perfección con Flask para definir puntos finales de API y generar automáticamente la interfaz de usuario Swagger.
+    * **apispec:** Independiente del marco, admite varios formatos de serialización para generar documentación OpenAPI.
+    * **connexion:** Construye APIs REST a partir de especificaciones Swagger/OpenAPI, asegurando el cumplimiento de la especificación.
+* **Consumo de APIs descritas por OpenAPI:**
+    * **requests:** Biblioteca base para realizar solicitudes HTTP, pero requiere el manejo manual de las estructuras de solicitud/respuesta.
+    * **pyswagger:** Genera código cliente Python a partir de especificaciones OpenAPI, ofreciendo una interacción con las API segura de tipos.
+
+**Casos de uso comunes:**
+
+* **Documentar API existentes:** Generar una interfaz de usuario Swagger interactiva para un uso claro de la API y su exploración.
+* **Construir API con Swagger:** Diseñar las especificaciones de la API primero, luego generar el código del lado del servidor y las SDK de clientes.
+* **Interactuar con API externas:** Utilizar las especificaciones OpenAPI para comprender la estructura de la API y automatizar las interacciones.
+
+**Pasos para integrar:**
+
+1. **Elija un marco/biblioteca de Python:** Seleccione según las necesidades y preferencias del proyecto.
+2. **Instale los paquetes necesarios:** Utilice `pip` para instalar las bibliotecas elegidas.
+3. **Defina los puntos finales de la API y los modelos:** Estructurar la API utilizando las convenciones del marco respectivo.
+4. **Generar la especificación OpenAPI (si corresponde):** Utilice las funciones integradas del marco o herramientas externas.
+5. **Integre la interfaz de usuario Swagger (opcional):** Incluya una interfaz para la exploración e implementación interactivas.
+6. **Consumir APIs descritas por OpenAPI:** Utilice el código cliente generado o bibliotecas como pyswagger.
+
+**Consideraciones adicionales:**
+
+* **Versionado:** OAS admite el versionado para la evolución de la API.
+* **Validación:** Bibliotecas como `connexion` garantizan el cumplimiento de la especificación.
+* **Pruebas:** La interfaz de usuario Swagger facilita las pruebas manuales, mientras que herramientas como `tavern` automatizan las pruebas de la API.
+
+**Ejemplo (Flask-RESTX):**
+
+Ejemplo 07:
+
+.. code:: python
+
+    from flask import Flask
+    from flask_restx import Api, Resource
+
+    app = Flask(__name__)
+    api = Api(app, title="Mi API", description="Un ejemplo simple de API")
+
+    @api.route("/hello")
+    class HelloWorld(Resource):
+        def get(self):
+            return {"message": "¡Hola, mundo!"}
+
+    if __name__ == "__main__":
+        app.run(debug=True)
+
+
+**Recuerde:** Elija herramientas y enfoques que se adapten mejor a los requisitos específicos de su proyecto.
+
+**Explicación adicional:**
+
+* **OpenAPI Specification (OAS):** La especificación OpenAPI es un lenguaje de descripción de API que define un conjunto de términos y reglas para describir APIs REST. Se utiliza para documentar APIs existentes, diseñar APIs nuevas y generar código cliente.
+* **Swagger:** Swagger es un conjunto de herramientas y recursos para implementar OpenAPI. Incluye una interfaz de usuario para exploración visual, generación de código y documentación.
+
+**Bibliotecas y marcos de Python para OpenAPI:**
+
+* **Flask-RESTX:** Una biblioteca para crear APIs REST con Flask. Se integra con Swagger para generar automáticamente la interfaz de usuario Swagger.
+* **apispec:** Una biblioteca independiente del marco para generar documentación OpenAPI. Admite varios formatos de serialización, incluidos JSON, YAML y XML.
+* **connexion:** Un marco para crear APIs REST a partir de especificaciones Swagger/OpenAPI. Asegura el cumplimiento de la especificación y proporciona características adicionales, como la seguridad y la autenticación.
+
+**Casos de uso:**
+
+* **Documentación:** La especificación OpenAPI se puede utilizar para documentar APIs existentes o diseñar APIs nuevas. La interfaz de usuario Swagger permite a los usuarios explorar e interactuar con las APIs de forma interactiva.

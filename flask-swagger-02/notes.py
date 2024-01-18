@@ -10,7 +10,7 @@ def read_one(note_id):
     if note is not None:
         return note_schema.dump(note)
     else:
-        abort(404, f"Note with ID {note_id} not found")
+        abort(404, f"Note con ID {note_id} no encontrada")
 
 
 def update(note_id, note):
@@ -23,7 +23,7 @@ def update(note_id, note):
         db.session.commit()
         return note_schema.dump(existing_note), 201
     else:
-        abort(404, f"Note with ID {note_id} not found")
+        abort(404, f"Note con ID {note_id} no encontrada")
 
 
 def delete(note_id):
@@ -32,9 +32,9 @@ def delete(note_id):
     if existing_note:
         db.session.delete(existing_note)
         db.session.commit()
-        return make_response(f"{note_id} successfully deleted", 204)
+        return make_response(f"{note_id} borrada exitosamente", 204)
     else:
-        abort(404, f"Note with ID {note_id} not found")
+        abort(404, f"Note con ID {note_id} no encontrada")
 
 
 def create(note):
@@ -47,4 +47,4 @@ def create(note):
         db.session.commit()
         return note_schema.dump(new_note), 201
     else:
-        abort(404, f"Person not found for ID: {person_id}")
+        abort(404, f"Persona no encontrada con ID: {person_id}")

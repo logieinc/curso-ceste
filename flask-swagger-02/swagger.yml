@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: "RP Flask REST API"
-  description: "An API about people and notes"
+  title: "Ceste Flask REST API"
+  description: "API acerca de persona y notas"
   version: "1.0.0"
 
 servers:
@@ -21,18 +21,19 @@ components:
   parameters:
     lname:
       name: "lname"
-      description: "Last name of the person to get"
+      description: "Apellido persona get"
       in: path
       required: True
       schema:
         type: "string"
     note_id:
       name: "note_id"
-      description: "ID of the note"
+      description: "ID de la nota"
       in: path
       required: true
       schema:
         type: "integer"
+
 
 paths:
   /people:
@@ -40,15 +41,15 @@ paths:
       operationId: "people.read_all"
       tags:
         - "People"
-      summary: "Read the list of people"
+      summary: "Obtener lista personas"
       responses:
         "200":
-          description: "Successfully read people list"
+          description: "Lectura exitosa lista personas"
     post:
       operationId: "people.create"
       tags:
         - People
-      summary: "Create a person"
+      summary: "Crear una persona"
       requestBody:
           description: "Person to create"
           required: True
@@ -70,7 +71,7 @@ paths:
         - $ref: "#/components/parameters/lname"
       responses:
         "200":
-          description: "Successfully read person"
+          description: "Lectura exitosa de persona"
     put:
       tags:
         - People
@@ -80,7 +81,7 @@ paths:
         - $ref: "#/components/parameters/lname"
       responses:
         "200":
-          description: "Successfully updated person"
+          description: "Update exitoso persona"
       requestBody:
         content:
           application/json:
@@ -91,18 +92,18 @@ paths:
       tags:
         - People
       operationId: "people.delete"
-      summary: "Delete a person"
+      summary: "Eliminar una persona"
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:
         "204":
-          description: "Successfully deleted person"
+          description: "Eliminación exitosa persona"
   /notes:
     post:
       operationId: "notes.create"
       tags:
         - Notes
-      summary: "Create a note associated with a person"
+      summary: "Crear nota asociada a persona"
       requestBody:
           description: "Note to create"
           required: True
@@ -118,7 +119,7 @@ paths:
                     type: "string"
       responses:
         "201":
-          description: "Successfully created a note"
+          description: "Creación exitosa de nota"
   /notes/{note_id}:
     get:
       operationId: "notes.read_one"
@@ -129,7 +130,7 @@ paths:
         - $ref: "#/components/parameters/note_id"
       responses:
         "200":
-          description: "Successfully read one note"
+          description: "Lectura exitosa al leer nota"
     put:
       tags:
         - Notes
@@ -139,7 +140,7 @@ paths:
         - $ref: "#/components/parameters/note_id"
       responses:
         "200":
-          description: "Successfully updated note"
+          description: "Update exitoso de nota"
       requestBody:
         content:
           application/json:
@@ -158,4 +159,4 @@ paths:
         - $ref: "#/components/parameters/note_id"
       responses:
         "204":
-          description: "Successfully deleted note"
+          description: "Eliminación exitosa de nota"

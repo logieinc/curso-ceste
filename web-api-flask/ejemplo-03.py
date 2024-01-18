@@ -4,7 +4,9 @@ import json
 
 # Realizar una solicitud PUT
 headers = {"accept": "*/*", "Content-Type" : "application/json"}
+
 data = {'fname': 'Estela', 'lname': "Quiroga"}
+
 response = requests.put('http://localhost:8000/api/people/Rodriguez', json=data, headers=headers)
 
 # Obtener el código de estado de la respuesta

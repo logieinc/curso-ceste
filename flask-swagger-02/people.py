@@ -19,7 +19,7 @@ def create(person):
         db.session.commit()
         return person_schema.dump(new_person), 201
     else:
-        abort(406, f"Person with last name {lname} already exists")
+        abort(406, f"Persona con apellido {lname} existe.")
 
 
 def read_one(lname):
@@ -28,7 +28,7 @@ def read_one(lname):
     if person is not None:
         return person_schema.dump(person)
     else:
-        abort(404, f"Person with last name {lname} not found")
+        abort(404, f"Persona con apellido {lname} no encontrada.")
 
 
 def update(lname, person):
@@ -41,7 +41,7 @@ def update(lname, person):
         db.session.commit()
         return person_schema.dump(existing_person), 201
     else:
-        abort(404, f"Person with last name {lname} not found")
+        abort(404, f"Persona con apellido {lname} no encontrada")
 
 
 def delete(lname):
@@ -50,6 +50,6 @@ def delete(lname):
     if existing_person:
         db.session.delete(existing_person)
         db.session.commit()
-        return make_response(f"{lname} successfully deleted", 200)
+        return make_response(f"{lname} borrada exitosamente", 200)
     else:
-        abort(404, f"Person with last name {lname} not found")
+        abort(404, f"Persona con apellido {lname} no encontrada")

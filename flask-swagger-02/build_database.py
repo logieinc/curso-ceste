@@ -5,40 +5,40 @@ from models import Note, Person
 
 PEOPLE_NOTES = [
     {
-        "lname": "Fairy",
-        "fname": "Tooth",
+        "lname": "Perez",
+        "fname": "Jose",
         "notes": [
-            ("I brush my teeth after each meal.", "2022-01-06 17:10:24"),
+            ("Me lavo los dientes después de cada comida.", "2022-01-06 17:10:24"),
             (
-                "The other day a friend said, I have big teeth.",
+                "El otro día una amiga dijo, tengo los dientes grandes",
                 "2022-03-05 22:17:54",
             ),
-            ("Do you pay per gram?", "2022-03-05 22:18:10"),
+            ("¿Pagas por internet?", "2022-03-05 22:18:10"),
         ],
     },
     {
-        "lname": "Ruprecht",
-        "fname": "Knecht",
+        "lname": "Gonzalez",
+        "fname": "Maria",
         "notes": [
             (
-                "I swear, I'll do better this year.",
+                "Lo juro, lo haré mejor este año.",
                 "2022-01-01 09:15:03",
             ),
             (
-                "Really! Only good deeds from now on!",
+                "¡En realidad! ¡De ahora en adelante sólo buenas obras!",
                 "2022-02-06 13:09:21",
             ),
         ],
     },
     {
-        "lname": "Bunny",
-        "fname": "Easter",
+        "lname": "Rodriguez",
+        "fname": "Ester",
         "notes": [
             (
-                "Please keep the current inflation rate in mind!",
+                "¡Tenga en cuenta la tasa de inflación actual!",
                 "2022-01-07 22:47:54",
             ),
-            ("No need to hide the eggs this time.", "2022-04-06 13:03:17"),
+            ("Necesito un nuevo cepillo de dientes", "2022-04-06 13:03:17"),
         ],
     },
 ]

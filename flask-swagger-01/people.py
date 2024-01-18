@@ -69,6 +69,6 @@ def update(lname, person):
 def delete(lname):
     if lname in PEOPLE:
         del PEOPLE[lname]
-        return make_response(f"{lname} successfully deleted", 200)
+        return make_response(f"{lname} borrada exitosamente", 200)
     else:
         abort(404, f"Persona con apellido {lname} no se encuentra.")

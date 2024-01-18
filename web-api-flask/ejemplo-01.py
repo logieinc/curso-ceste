@@ -3,7 +3,8 @@ import requests
 import json
 
 # Realizar una solicitud GET
-headers = {"accept": "*/*"}
+headers = {"accept": "*/*", "Content-Type" : "application/json"}
+
 response = requests.get('http://localhost:8000/api/people', headers=headers)
 
 # Obtener el contenido de la respuesta

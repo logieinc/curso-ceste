@@ -8,7 +8,8 @@ import json
 
 # Realizar una solicitud GET
 headers = {"accept": "*/*", "Content-Type" : "application/json"}
-response = requests.get('http://localhost:8000/api/people/Rodriguez', headers=headers)
+
+response = requests.get('http://localhost:8000/api/people/Perez', headers=headers)
 
 # Obtener el código de estado de la respuesta
 status_code = response.status_code

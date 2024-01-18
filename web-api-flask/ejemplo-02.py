@@ -4,7 +4,9 @@ import json
 
 # Realizar una solicitud POST
 headers = {"accept": "*/*", "Content-Type" : "application/json"}
-data = {'fname': 'John', 'lname': "ZZZZ"}
+
+data = {'fname': 'John', 'lname': "Doe"}
+
 response = requests.post('http://localhost:8000/api/people', json=data, headers=headers)
 
 # Obtener el código de estado de la respuesta

@@ -150,3 +150,102 @@ La elección del método HTTP correcto para una API depende de la acción que se
 **Conclusión**
 
 Las Web APIs son una herramienta poderosa que puede ser utilizada por desarrolladores de todo nivel de experiencia. Las APIs se utilizan para una amplia gama de propósitos y pueden ser una gran manera de mejorar la funcionalidad y la eficiencia de sus aplicaciones web.
+
+
+**Introducción a Flask, el framework de desarrollo web de Python**
+
+**¿Qué es Flask?**
+
+* Es un microframework ligero y flexible para crear aplicaciones web en Python.
+* Es conocido por su simplicidad, naturaleza no opinante y facilidad de uso.
+* Proporciona las herramientas esenciales para el desarrollo web, lo que le permite agregar funcionalidad según sea necesario a través de extensiones.
+
+**Características clave:**
+
+* **Minimalista:** No impone mucha estructura, lo que le brinda libertad en las elecciones de diseño.
+* **Enrutamiento:** Define patrones de URL para mapear funciones (vistas) que manejan diferentes solicitudes.
+* **Plantillas Jinja2:** Utiliza el motor de plantillas Jinja2 para generar contenido HTML dinámico.
+* **Biblioteca de utilidades WSGI de Werkzeug:** Construido sobre Werkzeug, que proporciona utilidades WSGI para el manejo de solicitudes y respuestas.
+* **Extenso:** Ofrece un rico ecosistema de extensiones (Flask-SQLAlchemy, Flask-Login, etc.) para tareas comunes de desarrollo web.
+
+**Estructura básica:**
+
+1. **Importar Flask:**
+
+.. code:: python
+
+    from flask import Flask
+
+2. **Crear una instancia de la aplicación:**
+
+.. code:: python
+
+    app = Flask(__name__)
+
+
+3. **Definir rutas:**
+
+.. code:: python
+
+    @app.route('/')
+    def index():
+        return "Hola, mundo!"
+
+
+4. **Ejecutar la aplicación:**
+
+.. code:: python
+
+    flask run
+
+
+**Ventajas de Flask:**
+
+* Simple y fácil de aprender, incluso para principiantes.
+* Flexible y adaptable a diversas necesidades de proyectos.
+* Gran comunidad y documentación extensa.
+* Ideal para prototipado, aplicaciones pequeñas a medianas y API.
+
+**Casos de uso comunes:**
+
+* Sitios web y blogs personales
+* API RESTful
+* Servicios web
+* Plataformas de comercio electrónico
+* Paneles de visualización de datos
+* Aplicaciones web personalizadas
+
+**Ejemplo básico**
+
+El siguiente ejemplo muestra cómo crear una aplicación web simple con Flask:
+
+.. code: python
+
+    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return "Hola, mundo!"
+
+    if __name__ == '__main__':
+        app.run()
+
+Este código crea una aplicación web con una sola ruta, `/`, que devuelve la cadena "Hola, mundo!". Para ejecutar la aplicación, puede usar el siguiente comando:
+
+.. code : python
+
+    flask run
+
+
+Esto abrirá una instancia de la aplicación en el puerto 5000. Puede acceder a la aplicación en su navegador web en la siguiente URL:
+
+```
+http://localhost:5000
+```
+
+**Conclusiones**
+
+Flask es un framework de desarrollo web flexible y poderoso que es ideal para una amplia gama de proyectos. Es una buena opción para principiantes y desarrolladores experimentados por igual.
+

@@ -3,6 +3,10 @@ Conexión a API y Uso de Web APIs con Requests
 
 `Curso gráfico MIRO <https://miro.com/welcomeonboard/M2owWWFuRHBwaXJxbm1rR2pnWjdvazdBZ2l1ZUdWVU1taTAxWExqNDdyd1Q0d2htMGszSEw1TWJ3ZU90dVpZVnwzNDU4NzY0NTY3ODY3MjMyMTY2fDI=?share_link_id=544290942241>`__
 
+
+Web API
+^^^^^^^^
+
 **¿Qué es una Web API?**
 
 Una Web API, o Application Programming Interface, es un conjunto de métodos y datos que se exponen a través de Internet para que los desarrolladores puedan interactuar con ellos. Las Web APIs se utilizan para una amplia gama de propósitos, como proporcionar acceso a datos, realizar tareas automatizadas o crear nuevas aplicaciones.
@@ -46,9 +50,6 @@ Estos métodos se utilizan para realizar diferentes acciones en una API, como:
 * **OPTIONS:** Obtener información sobre los métodos HTTP admitidos por una API.
 
 En Python, estos métodos se pueden utilizar de la siguiente manera:
-
-Todo es un objeto en Python:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ejemplo 01:
 
@@ -178,6 +179,8 @@ La elección del método HTTP correcto para una API depende de la acción que se
 
 Las Web APIs son una herramienta poderosa que puede ser utilizada por desarrolladores de todo nivel de experiencia. Las APIs se utilizan para una amplia gama de propósitos y pueden ser una gran manera de mejorar la funcionalidad y la eficiencia de sus aplicaciones web.
 
+Flask
+^^^^^^^^
 
 **Introducción a Flask, el framework de desarrollo web de Python**
 
@@ -269,6 +272,9 @@ Esto abrirá una instancia de la aplicación en el puerto 5000. Puede acceder a 
 **Conclusiones**
 
 Flask es un framework de desarrollo web flexible y poderoso que es ideal para una amplia gama de proyectos. Es una buena opción para principiantes y desarrolladores experimentados por igual.
+
+Python OpenAPI y Swagger
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Integración en Python de OpenAPI y Swagger:**
 

@@ -3,6 +3,74 @@ Conexión a API y Uso de Web APIs con Requests
 
 `Curso gráfico MIRO <https://miro.com/welcomeonboard/M2owWWFuRHBwaXJxbm1rR2pnWjdvazdBZ2l1ZUdWVU1taTAxWExqNDdyd1Q0d2htMGszSEw1TWJ3ZU90dVpZVnwzNDU4NzY0NTY3ODY3MjMyMTY2fDI=?share_link_id=544290942241>`__
 
+Contenido repositorio
+^^^^^^^^^^^^^^^^^^^^^^
+
+* **Python venv y módulos:**
+
+    En el directorio raiz del repositorio encontramos archivos con prefijo requirements-X.XX.txt, los mismos corresponden a versiones compiladores python, de esta manera cuando se quieran ejecutar los ejemplos expuestos en los talleres los mismos contarán con todas las dependencias a librerias necesarias.
+
+    pip install -r requirements-X.XX.txt
+
+    pip install flask
+
+    pip install connexion[flask]
+
+    pip install connexion[uvicorn]
+
+    pip install connexion[swagger-ui]
+
+    pip install requests
+
+    pip install flask_restx
+
+    pip install flask_restful
+
+    pip install flask_sqlalchemy
+
+    pip install flask_swagger_ui
+
+    pip install flask_marshmallow
+
+    pip install marshmallow-sqlalchemy
+
+* **directorio introduccion:**
+
+        Este directorio contiene ejemplos request metodos: GET,POST,PUT y DELETE
+
+        ejemplo-01: Request método GET
+
+        ejemplo-02: Request método POST
+
+        ejemplo-03: Request método PUT
+
+        ejemplo-04: Request método DELETE
+
+        ejemplo-05: Request método GET con key
+
+        ejemplo-06: Esqueleto base implementacion FLASK
+
+        ejemplo-07: Flask con clase interna implementando método GET
+
+        Nota: Para la ejecución de estos ejemplos es necesario ejecutar desde flask-swagger-01/app-02.y
+
+* **directorio flask-swagger-01:**
+
+        app-01.py:
+
+        Implementación Flask, OpenApi/Swagger, a partir de modelo JSON se generan endpoints donde se obtiene una lista de usuarios.
+
+        app-02.py:
+
+        Implementación Flask, OpenApi/Swagger, a partir de modelo YAML se generan endpoints para manejo de personas, GET, POST, PUT, DELETE, a su vez determina la entidad People con sus atributos.
+
+
+* **directorio flask-swagger-02:**
+
+        app.py:
+
+        Implementación Flask, OpenApi/Swagger, a partir de modelo YAML se generan endpoints manejo de personas y notas relacionadas, sustentado sobre base de datos.
+
 
 Web API
 ^^^^^^^^
@@ -351,3 +419,63 @@ Ejemplo 07:
 **Casos de uso:**
 
 * **Documentación:** La especificación OpenAPI se puede utilizar para documentar APIs existentes o diseñar APIs nuevas. La interfaz de usuario Swagger permite a los usuarios explorar e interactuar con las APIs de forma interactiva.
+
+Web APIs final (desarrollo final)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: python
+
+        openapi: 3.0.0
+        info:
+          title: Vuelos API Ceste
+          description: Una API para consultar vuelos
+          version: 1.0.0
+
+        paths:
+          /flights:
+            get:
+              operationId: get_flights
+              parameters:
+              - name: origin
+                in: query
+                schema:
+                  type: string
+              - name: destination
+                in: query
+                schema:
+                  type: string
+              responses:
+                '200':
+                  description: Lista de vuelos
+                  content:
+                    application/json:
+                      schema:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Flight'
+
+        components:
+          schemas:
+            Flight:
+              type: object
+              properties:
+                origin:
+                  type: string
+                destination:
+                  type: string
+                departure_date:
+                  type: string
+                  format: date
+                arrival_date:
+                  type: string
+                  format: date
+                price:
+                  type: number
+
+
+
+
+
+
+
+

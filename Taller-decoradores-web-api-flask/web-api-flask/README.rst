@@ -423,6 +423,44 @@ Ejemplo 07:
 Web APIs final (desarrollo final)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Teniendo código template implementar dos apps, en ambas endpoints GET,POST,PUT,DELETE para manejo de vuelos, en la primera de ellas utilizando decoradores propios de swagger para exponerlos y en la segunda solo el modelo presentado en la parte inferior como archivo YAML.
+
+.. code:: python
+
+    import flask
+    from flask_restful import Api
+    from flasgger import Swagger
+
+    app = flask.Flask(__name__)
+    api = Api(app)
+    swagger = Swagger(app)
+
+    @app.route("/flights")  # GET: Obtener todos los vuelos
+    @swagger.doc(tags=["Flights"], description="Obtiene todos los usuarios")
+    def get_usuarios():
+        return {}
+
+    @app.route("/flights", methods=["POST"])  # POST: Crear un vuelo
+    @swagger.doc(tags=["Vuelos"], description="Crea un nuevo vuelo")
+    def create_usuario():
+        data = flask.request.get_json()
+        return {}
+
+    @app.route("/flights/<int:id>", methods=["PUT"])  # PUT: Actualizar un vuelo
+    @swagger.doc(tags=["Flights"], description="Actualiza un vuelo")
+    def update_usuario(id):
+        data = flask.request.get_json()
+        return {"usuario": data["nombre"]}
+
+    @app.route("/flights/<int:id>", methods=["DELETE"])  # DELETE: Eliminar un vuelo
+    @swagger.doc(tags=["Flighs"], description="Elimina un vuelo")
+    def delete_usuario(id):
+        return {"id": id}
+
+    if __name__ == "__main__":
+        app.run(debug=True)
+
+
 .. code:: python
 
         openapi: 3.0.0

@@ -458,7 +458,7 @@ Teniendo código template implementar dos apps, en ambas endpoints GET,POST,PUT,
         return {"id": id}
 
     if __name__ == "__main__":
-        app.run(debug=True)
+        app.run()
 
 
 .. code:: python

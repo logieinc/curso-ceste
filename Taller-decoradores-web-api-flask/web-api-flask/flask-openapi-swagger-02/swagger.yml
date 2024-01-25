@@ -51,7 +51,7 @@ paths:
         - People
       summary: "Crear una persona"
       requestBody:
-          description: "Person to create"
+          description: "Persona a crear"
           required: True
           content:
             application/json:
@@ -60,13 +60,13 @@ paths:
                 $ref: "#/components/schemas/Person"
       responses:
         "201":
-          description: "Successfully created person"
+          description: "Persona creada existosamente"
   /people/{lname}:
     get:
       operationId: "people.read_one"
       tags:
         - People
-      summary: "Read one person"
+      summary: "Obtener persona por nombre"
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:
@@ -76,12 +76,12 @@ paths:
       tags:
         - People
       operationId: "people.update"
-      summary: "Update a person"
+      summary: "Actualiza datos persona"
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:
         "200":
-          description: "Update exitoso persona"
+          description: "Actualización exitosa persona"
       requestBody:
         content:
           application/json:

@@ -1,4 +1,4 @@
-from flask import abort, make_response
+from flask import abort, make_response, request
 
 from config import db
 from models import Person, people_schema, person_schema
@@ -9,10 +9,10 @@ def read_all():
     return people_schema.dump(people)
 
 
-def create(person):
+def create():
+    person = request.get_json()
     lname = person.get("lname")
     existing_person = Person.query.filter(Person.lname == lname).one_or_none()
-
     if existing_person is None:
         new_person = person_schema.load(person, session=db.session)
         db.session.add(new_person)
@@ -31,9 +31,9 @@ def read_one(lname):
         abort(404, f"Persona con apellido {lname} no encontrada.")
 
 
-def update(lname, person):
+def update(lname):
+    person = request.get_json()
     existing_person = Person.query.filter(Person.lname == lname).one_or_none()
-
     if existing_person:
         update_person = person_schema.load(person, session=db.session)
         existing_person.fname = update_person.fname

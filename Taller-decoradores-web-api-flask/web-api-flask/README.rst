@@ -437,24 +437,24 @@ Teniendo código template implementar dos apps, en ambas endpoints GET,POST,PUT,
 
     @app.route("/flights")  # GET: Obtener todos los vuelos
     @swagger.doc(tags=["Flights"], description="Obtiene todos los usuarios")
-    def get_usuarios():
+    def get_flights():
         return {}
 
     @app.route("/flights", methods=["POST"])  # POST: Crear un vuelo
     @swagger.doc(tags=["Vuelos"], description="Crea un nuevo vuelo")
-    def create_usuario():
+    def create_flight():
         data = flask.request.get_json()
         return {}
 
     @app.route("/flights/<int:id>", methods=["PUT"])  # PUT: Actualizar un vuelo
     @swagger.doc(tags=["Flights"], description="Actualiza un vuelo")
-    def update_usuario(id):
+    def update_flight(id):
         data = flask.request.get_json()
         return {"usuario": data["nombre"]}
 
     @app.route("/flights/<int:id>", methods=["DELETE"])  # DELETE: Eliminar un vuelo
     @swagger.doc(tags=["Flighs"], description="Elimina un vuelo")
-    def delete_usuario(id):
+    def delete_flight(id):
         return {"id": id}
 
     if __name__ == "__main__":

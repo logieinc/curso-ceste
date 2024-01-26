@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Vuelos API Ceste
+  description: API consulta vuelos
+  version: 1.0.0
+
+servers:
+  - url: "/api"
+
+paths:
+  /flights:
+    get:
+      operationId: "flights.get_flights"
+      tags:
+        - "Flight"
+      summary: "Obtener lista vuelos"
+      responses:
+        "200":
+          description: "Lectura exitosa lista vuelos"
+#  TODO
+
+components:
+  schemas:
+    Flight:
+      type: object
+      properties:
+        origin:
+          type: string
+          example: EZE
+        destination:
+          type: string
+        departure_date:
+          type: string
+          format: date-time
+        arrival_date:
+          type: string
+          format: date-time
+        price:
+          type: number
+  parameters:
+    origin:
+      name: "origin"
+      description: "Origen vuelo GET"
+      in: path
+      example: "+fecha -nombre"
+      required: True
+      schema:
+        type: "string"

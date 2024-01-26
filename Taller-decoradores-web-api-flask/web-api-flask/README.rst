@@ -34,6 +34,8 @@ Contenido repositorio
 
     pip install marshmallow-sqlalchemy
 
+    pip install flasgger
+
 * **directorio introduccion:**
 
         Este directorio contiene ejemplos request metodos: GET,POST,PUT y DELETE
@@ -509,6 +511,10 @@ Teniendo código template implementar dos apps, en ambas endpoints GET,POST,PUT,
                   format: date
                 price:
                   type: number
+
+`Editor Swagger  <https://editor.swagger.io/>`__
+
+
 
 
 

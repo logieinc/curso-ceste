@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ceste Flask REST API</title>
+</head>
+<body>
+    <h1>
+       Vuelos
+    </h1>
+    {% for flight in flights %}
+    <h2>{{ flight.origin }} {{ flight.price }}</h2>
+    {% endfor %}
+</body>
+</html>

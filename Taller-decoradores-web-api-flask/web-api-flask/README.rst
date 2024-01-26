@@ -512,7 +512,7 @@ Teniendo código template implementar dos apps, en ambas endpoints GET,POST,PUT,
                 price:
                   type: number
 
-`Editor Swagger  <https://editor.swagger.io/>`__
+`Herramienta de edición Swagger  <https://editor.swagger.io/>`__
 
 
 

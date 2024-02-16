@@ -2,4 +2,6 @@ BOTO3
 -----
 
 .. image:: assets/images/boto3.jpg
-    :scale: 40%
+    :width: 30px
+    :height: 30px
+

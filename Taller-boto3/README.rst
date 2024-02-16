@@ -25,3 +25,30 @@ BOTO3
 
     Warnings are formatted in the same way as notes. In the same way,
     lines must be broken and indented under the warning tag.
+
+.. code:: python
+
+    def hola(nombre="Ceste"):
+        return "Hola " + nombre
+
+    print(hola())
+    # Salida: 'Hola Ceste'
+
+    # Podemos asignar una función a una variable
+    saluda = hola
+    # No usamos () porque no la estamos llamando, sino que la estamos
+    # asignado a una variable
+
+    print(saluda())
+    # Salida: 'Hola Ceste'
+
+    # También podemos eliminar la función asignada a la variable con del
+    try:
+        del hola
+        print(hola())
+    except Exception as e:
+        print('Ocurrió un Exception. {}'.format(e.args[-1]))
+    # Salida: NameError
+
+    print(saluda())
+    # Salida: 'Hola Ceste'

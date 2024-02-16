@@ -2,11 +2,11 @@ BOTO3
 -----
 
 .. image:: assets/images/boto3.jpg
-    :align: middle
+    :align: center
     :width: 300px
     :height: 280px
 
-
+<br >![ Screenshot of the empty token dialog box ](assets/images/boto3.jpg)
 
 .. note::
    This is note text. Use a note for information you want the user to

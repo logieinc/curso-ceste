@@ -1,4 +1,4 @@
 BOTO3
 -----
 
-.. image:: boto3.jpg
+.. image:: assets/images/boto3.jpg

@@ -12,6 +12,8 @@ Contenido repositorio
 
     pip install -r requirements-X.XX.txt
 
+    O independientemente puede ejecutar instalación de cada una de las dependencias
+
     pip install flask
 
     pip install connexion[flask]

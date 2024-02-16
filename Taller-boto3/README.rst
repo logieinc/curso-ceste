@@ -4,7 +4,7 @@ BOTO3
 .. image:: assets/images/boto3.jpg
     :width: 300px
     :height: 280px
-    :align: middle
+    :align: center
 
 
 .. note::

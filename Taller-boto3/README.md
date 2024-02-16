@@ -1,7 +1,4 @@
-BOTO3
------
-
-<br >![ Screenshot of the empty token dialog box ](assets/images/boto3.jpg)
+<br >![ Screenshot of the empty token dialog box ](assets/images/logo-ceste.png)
 
 ### Boto3: El SDK de Python para AWS
 
@@ -77,5 +74,189 @@ BOTO3
    print(instance.id, instance.state)
    ```
 
+**Recursos adicionales:**
 
+* **Documentación de AWS Secrets Manager:** [https://docs.aws.amazon.com/secretsmanager/latest/userguide/](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
+
+
+### AWS Secrets Manager:
+
+**¿Qué es?**
+
+AWS Secrets Manager es un servicio que le ayuda a almacenar, administrar y rotar de forma segura las credenciales de bases de datos, las claves de API y otros datos confidenciales. Le permite:
+
+* **Almacenar secretos de forma segura:** Cifra sus secretos en reposo y en tránsito, y los protege con controles de acceso granulares.
+* **Administrar el acceso a los secretos:** Puede controlar quién puede acceder a sus secretos y para qué pueden usarlos.
+* **Rotar secretos automáticamente:** Puede configurar Secrets Manager para que rote automáticamente sus secretos según un programa establecido.
+* **Auditar el acceso a los secretos:** Puede ver quién ha accedido a sus secretos y cuándo lo ha hecho.
+
+**Beneficios:**
+
+* **Mejora la seguridad:** Reduce el riesgo de que se expongan sus datos confidenciales.
+* **Simplifica la administración de secretos:** Elimina la necesidad de almacenar secretos en código o en archivos de configuración.
+* **Mejora el cumplimiento:** Le ayuda a cumplir con los requisitos de cumplimiento que exigen la rotación regular de secretos.
+
+**Casos de uso:**
+
+* **Almacenar credenciales de bases de datos:** Secrets Manager es una forma segura de almacenar las credenciales de sus bases de datos, como las claves de usuario y las contraseñas.
+* **Almacenar claves de API:** Puede almacenar de forma segura las claves de API para sus servicios en la nube, como AWS Lambda y Amazon S3.
+* **Almacenar otros datos confidenciales:** Puede almacenar cualquier tipo de dato confidencial en Secrets Manager, como tokens de OAuth y claves SSH.
+
+**Recursos adicionales:**
+
+* **Documentación de AWS Secrets Manager:** [https://docs.aws.amazon.com/secretsmanager/latest/userguide/](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
+
+
+## AWS S3:
+
+**¿Qué es?**
+
+Amazon Simple Storage Service (Amazon S3) es un servicio de almacenamiento de objetos que ofrece escalabilidad, disponibilidad de datos, seguridad y rendimiento líderes en el sector. Puede utilizarlo para almacenar cualquier tipo de datos, como:
+
+* Archivos web y estáticos
+* Imágenes y vídeos
+* Registros y datos de aplicaciones
+* Respaldos de datos
+* Entornos de desarrollo y prueba
+
+**Beneficios:**
+
+* **Escalabilidad:** Puede almacenar cualquier cantidad de datos en Amazon S3. El servicio escala automáticamente para satisfacer sus necesidades de almacenamiento.
+* **Disponibilidad de datos:** Amazon S3 ofrece una alta disponibilidad de datos. Sus datos se replican en varios centros de datos de todo el mundo.
+* **Seguridad:** Amazon S3 ofrece una amplia gama de funciones de seguridad para proteger sus datos. Puede controlar quién puede acceder a sus datos y cómo se utilizan.
+* **Rendimiento:** Amazon S3 ofrece un alto rendimiento para el almacenamiento y la recuperación de datos.
+
+**Casos de uso:**
+
+* **Almacenamiento web y estático:** Amazon S3 es una opción popular para almacenar archivos web y estáticos. Es una forma escalable y segura de servir contenido web a sus usuarios.
+* **Almacenamiento de imágenes y vídeos:** Amazon S3 es una excelente opción para almacenar imágenes y vídeos. Puede utilizar el servicio para almacenar sus fotos personales, vídeos de vacaciones o imágenes de productos para su sitio web.
+* **Respaldos de datos:** Amazon S3 puede utilizarse para realizar copias de seguridad de sus datos. Es una forma segura y fiable de proteger sus datos en caso de desastre.
+* **Entornos de desarrollo y prueba:** Amazon S3 puede utilizarse para crear entornos de desarrollo y prueba. Puede utilizar el servicio para almacenar el código de su aplicación, los datos de prueba y otros archivos necesarios para sus proyectos de desarrollo.
+
+**Recursos adicionales:**
+
+* **Documentación de Amazon S3:** https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/Welcome.html
+
+## AWS RDS:
+
+**¿Qué es?**
+
+Amazon Relational Database Service (RDS) es un servicio de base de datos relacional gestionado que facilita la configuración, operación y escalado de una base de datos en la nube. Le permite ejecutar bases de datos populares como MySQL, PostgreSQL, Aurora (MySQL y PostgreSQL compatible), MariaDB, Oracle Database, SQL Server y Amazon Redshift sin tener que gestionar la infraestructura subyacente.
+
+**Beneficios:**
+
+* **Facilidad de uso:** RDS simplifica la configuración y la gestión de bases de datos en la nube. No necesita gestionar la instalación, el parcheado, la copia de seguridad ni la escalabilidad de la infraestructura subyacente.
+* **Alto rendimiento y disponibilidad:** RDS ofrece alto rendimiento y disponibilidad para sus bases de datos. Puede elegir entre varias opciones de almacenamiento y configuraciones de hardware para satisfacer sus necesidades de rendimiento.
+* **Seguridad:** RDS ofrece una amplia gama de funciones de seguridad para proteger sus datos. Puede controlar quién puede acceder a sus bases de datos y cómo se utilizan.
+* **Compatibilidad:** RDS es compatible con muchos motores de bases de datos populares, lo que le facilita la migración de sus bases de datos locales a la nube.
+* **Costo-efectivo:** RDS tiene un precio basado en el uso, lo que significa que sólo paga por los recursos que utiliza.
+
+**Casos de uso:**
+
+* **Aplicaciones web y móviles:** RDS puede utilizarse para almacenar datos para aplicaciones web y móviles.
+* **Comercio electrónico:** RDS puede utilizarse para almacenar datos de productos, pedidos y clientes.
+* **Juegos:** RDS puede utilizarse para almacenar datos de jugadores, partidas y logros.
+* **Analítica:** RDS puede utilizarse para almacenar datos para análisis empresariales.
+* **Cualquier aplicación que requiera una base de datos relacional:** Puede utilizar RDS para almacenar datos para cualquier aplicación que requiera una base de datos relacional.
+
+**Recursos adicionales:**
+
+* **Documentación de RDS:** [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
+
+## AWS Redshift:
+
+**¿Qué es?**
+
+Amazon Redshift es un data warehouse rápido, escalable y totalmente gestionado, diseñado para analizar petabytes de datos estructurados y semiestructurados. Construido sobre tecnología MPP (procesamiento masivamente paralelo), proporciona un alto rendimiento y una excelente relación coste-rendimiento para consultas complejas en grandes conjuntos de datos.
+
+**Ventajas:**
+
+* **Rendimiento y escalabilidad:** Redshift ofrece un rendimiento líder en el sector para consultas analíticas en grandes datasets. Puede escalar automáticamente para satisfacer las necesidades de su carga de trabajo.
+* **Fácil de usar:** Redshift es un servicio totalmente gestionado, lo que significa que AWS se encarga de la configuración, la operación y el mantenimiento de la infraestructura subyacente. Solo tiene que cargar sus datos y empezar a consultar.
+* **Bajo coste:** Redshift tiene un precio basado en el uso, lo que significa que solo paga por los recursos que utiliza.
+* **Compatibilidad:** Redshift utiliza SQL estándar, por lo que puede utilizar las mismas herramientas y habilidades que ya tiene para analizar sus datos.
+* **Integración con otros servicios de AWS:** Redshift se integra perfectamente con otros servicios de AWS, como Amazon S3, Amazon EMR y Amazon QuickSight, lo que facilita la creación de pipelines de datos e informes analíticos.
+
+**Casos de uso:**
+
+* **Análisis de marketing:** Analice grandes cantidades de datos de clientes para comprender mejor su comportamiento y tomar decisiones empresariales más informadas.
+* **Análisis financiero:** Realice análisis financieros complejos para evaluar el rendimiento de la empresa y tomar decisiones de inversión.
+* **Análisis operativo:** Analice datos operativos para identificar áreas de mejora y optimizar sus procesos empresariales.
+* **Análisis de fraude:** Detecta y previene el fraude analizando patrones de actividad maliciosa.
+* **Cualquier aplicación que requiera análisis de big data:** Puede utilizar Redshift para analizar grandes cantidades de datos para una amplia variedad de casos de uso.
+
+**Recursos adicionales:**
+
+* Documentación de Redshift: [https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html](https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html)
+
+## AWS ECS:
+
+**¿Qué es Amazon ECS?**
+
+Amazon Elastic Container Service (Amazon ECS) es un servicio de orquestación de contenedores totalmente gestionado que ayuda a:
+
+* **Desplegar** aplicaciones en contenedores
+* **Escalar** las aplicaciones automáticamente para satisfacer la demanda
+* **Administrar** el ciclo de vida de las aplicaciones en contenedores
+
+**Beneficios:**
+
+* **Reduce la complejidad:** Gestiona la infraestructura subyacente para que pueda centrarse en desarrollar su aplicación.
+* **Aumenta la agilidad:** Implemente y escale las aplicaciones rápidamente con solo unos pocos clics.
+* **Mejora la fiabilidad:** Las aplicaciones en contenedores se recuperan automáticamente de los fallos.
+* **Reduce los costes:** Pague solo por los recursos que utilice.
+
+**Casos de uso:**
+
+* **Ejecutar microservicios:** Divida las aplicaciones en componentes pequeños e independientes.
+* **Ejecutar aplicaciones sin estado:** Ejecute aplicaciones que no almacenen datos entre llamadas.
+* **Ejecutar tareas por lotes:** Ejecute trabajos por lotes en paralelo para un procesamiento más rápido.
+* **Modernizar aplicaciones monolíticas:** Migre aplicaciones monolíticas a contenedores.
+
+**Componentes clave:**
+
+* **Contenedores:** Unidades estándar de software empaquetadas que incluyen el código de la aplicación y sus dependencias.
+* **Grupos de tareas:** Definen un conjunto de tareas que se ejecutan en un clúster.
+* **Servicios:** Representaciones escalables y duraderas de grupos de tareas ejecutados en un clúster.
+* **Clústeres:** Infraestructura informática subyacente para ejecutar grupos de tareas y servicios.
+
+**Opciones de implementación:**
+
+* **AWS Fargate:** Opción sin servidor donde AWS gestiona la infraestructura subyacente.
+* **Modo EC2:** Utilice instancias EC2 para ejecutar sus contenedores.
+
+**Recursos adicionales:**
+
+* Documentación de Amazon ECS: [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+
+## AWS AirFlow:
+
+**¿Qué es Amazon Managed Workflows for Apache Airflow (MWAA)?**
+
+AWS MWAA es un servicio gestionado de Apache Airflow que le permite ejecutar sus flujos de trabajo de Airflow existentes en un entorno seguro y escalable en la nube de AWS. 
+
+**Beneficios:**
+
+* **Facilidad de uso:** No necesita gestionar la infraestructura subyacente, las actualizaciones de Apache Airflow ni las integraciones con los servicios de AWS.
+* **Escalabilidad automática:** Las instancias se escalan automáticamente para satisfacer las demandas de sus flujos de trabajo.
+* **Alta disponibilidad:** El servicio está diseñado para ser altamente disponible y resistente a fallos.
+* **Seguridad:** Su entorno de Airflow está aislado y protegido con las prácticas de seguridad de AWS.
+* **Integración con servicios de AWS:** Se integra fácilmente con otros servicios de AWS, como S3, RDS, Lambda y más.
+
+**Casos de uso:**
+
+* **Orquestar ETL/ELT pipelines:** Mueva datos entre diferentes fuentes y destinos de forma automatizada.
+* **Automatizar tareas de ML:** Ejecute trabajos de entrenamiento de modelos, evaluación y análisis de resultados.
+* **Ejecutar tareas programadas:** Cree flujos de trabajo para tareas como enviar notificaciones, generar informes o ejecutar scripts.
+* **Gestionar complejos flujos de trabajo:** Cree dependencias entre tareas y gestione la ejecución condicional.
+
+**¿Cómo funciona MWAA?**
+
+* Usted proporciona sus DAGs (Directed Acyclic Graphs) de Airflow y configuraciones.
+* MWAA establece y gestiona automáticamente el entorno de Airflow en su cuenta de AWS.
+* Puede acceder a la interfaz web de Airflow y gestionar sus flujos de trabajo como lo haría con una implementación local.
+
+**Recursos adicionales:**
+
+* **Documentación de MWAA:** https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html
 

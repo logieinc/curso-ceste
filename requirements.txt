@@ -1,0 +1,12 @@
+flask
+connexion[flask]
+connexion[uvicorn]
+connexion[swagger-ui]
+requests
+flask_restx
+flask_restful
+flask_sqlalchemy
+flask_swagger_ui
+flask_marshmallow
+marshmallow-sqlalchemy
+flasgger

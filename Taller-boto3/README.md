@@ -74,11 +74,6 @@
    print(instance.id, instance.state)
    ```
 
-**Recursos adicionales:**
-
-* **Documentación de AWS Secrets Manager:** [https://docs.aws.amazon.com/secretsmanager/latest/userguide/](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
-
-
 ### AWS Secrets Manager:
 
 **¿Qué es?**

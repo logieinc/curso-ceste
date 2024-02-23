@@ -132,32 +132,6 @@ Amazon Simple Storage Service (Amazon S3) es un servicio de almacenamiento de ob
 
 * **Documentación de Amazon S3:** https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/Welcome.html
 
-## AWS RDS:
-
-**¿Qué es?**
-
-Amazon Relational Database Service (RDS) es un servicio de base de datos relacional gestionado que facilita la configuración, operación y escalado de una base de datos en la nube. Le permite ejecutar bases de datos populares como MySQL, PostgreSQL, Aurora (MySQL y PostgreSQL compatible), MariaDB, Oracle Database, SQL Server y Amazon Redshift sin tener que gestionar la infraestructura subyacente.
-
-**Beneficios:**
-
-* **Facilidad de uso:** RDS simplifica la configuración y la gestión de bases de datos en la nube. No necesita gestionar la instalación, el parcheado, la copia de seguridad ni la escalabilidad de la infraestructura subyacente.
-* **Alto rendimiento y disponibilidad:** RDS ofrece alto rendimiento y disponibilidad para sus bases de datos. Puede elegir entre varias opciones de almacenamiento y configuraciones de hardware para satisfacer sus necesidades de rendimiento.
-* **Seguridad:** RDS ofrece una amplia gama de funciones de seguridad para proteger sus datos. Puede controlar quién puede acceder a sus bases de datos y cómo se utilizan.
-* **Compatibilidad:** RDS es compatible con muchos motores de bases de datos populares, lo que le facilita la migración de sus bases de datos locales a la nube.
-* **Costo-efectivo:** RDS tiene un precio basado en el uso, lo que significa que sólo paga por los recursos que utiliza.
-
-**Casos de uso:**
-
-* **Aplicaciones web y móviles:** RDS puede utilizarse para almacenar datos para aplicaciones web y móviles.
-* **Comercio electrónico:** RDS puede utilizarse para almacenar datos de productos, pedidos y clientes.
-* **Juegos:** RDS puede utilizarse para almacenar datos de jugadores, partidas y logros.
-* **Analítica:** RDS puede utilizarse para almacenar datos para análisis empresariales.
-* **Cualquier aplicación que requiera una base de datos relacional:** Puede utilizar RDS para almacenar datos para cualquier aplicación que requiera una base de datos relacional.
-
-**Recursos adicionales:**
-
-* **Documentación de RDS:** [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
-
 
 <br >![ Screenshot of the empty token dialog box ](assets/images/s3.jpg)
 
@@ -237,6 +211,33 @@ Puede recuperar versiones anteriores de un objeto utilizando la consola de admin
 **Resumen:**
 
 El versionado de S3 es una herramienta poderosa que puede ayudarlo a proteger sus datos contra errores humanos, realizar un seguimiento de los cambios y cumplir con los requisitos normativos. Sin embargo, es importante tener en cuenta las limitaciones de costo y complejidad antes de habilitarlo.
+
+
+## AWS RDS:
+
+**¿Qué es?**
+
+Amazon Relational Database Service (RDS) es un servicio de base de datos relacional gestionado que facilita la configuración, operación y escalado de una base de datos en la nube. Le permite ejecutar bases de datos populares como MySQL, PostgreSQL, Aurora (MySQL y PostgreSQL compatible), MariaDB, Oracle Database, SQL Server y Amazon Redshift sin tener que gestionar la infraestructura subyacente.
+
+**Beneficios:**
+
+* **Facilidad de uso:** RDS simplifica la configuración y la gestión de bases de datos en la nube. No necesita gestionar la instalación, el parcheado, la copia de seguridad ni la escalabilidad de la infraestructura subyacente.
+* **Alto rendimiento y disponibilidad:** RDS ofrece alto rendimiento y disponibilidad para sus bases de datos. Puede elegir entre varias opciones de almacenamiento y configuraciones de hardware para satisfacer sus necesidades de rendimiento.
+* **Seguridad:** RDS ofrece una amplia gama de funciones de seguridad para proteger sus datos. Puede controlar quién puede acceder a sus bases de datos y cómo se utilizan.
+* **Compatibilidad:** RDS es compatible con muchos motores de bases de datos populares, lo que le facilita la migración de sus bases de datos locales a la nube.
+* **Costo-efectivo:** RDS tiene un precio basado en el uso, lo que significa que sólo paga por los recursos que utiliza.
+
+**Casos de uso:**
+
+* **Aplicaciones web y móviles:** RDS puede utilizarse para almacenar datos para aplicaciones web y móviles.
+* **Comercio electrónico:** RDS puede utilizarse para almacenar datos de productos, pedidos y clientes.
+* **Juegos:** RDS puede utilizarse para almacenar datos de jugadores, partidas y logros.
+* **Analítica:** RDS puede utilizarse para almacenar datos para análisis empresariales.
+* **Cualquier aplicación que requiera una base de datos relacional:** Puede utilizar RDS para almacenar datos para cualquier aplicación que requiera una base de datos relacional.
+
+**Recursos adicionales:**
+
+* **Documentación de RDS:** [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 
 
 ## AWS Redshift:

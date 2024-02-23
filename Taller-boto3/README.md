@@ -158,6 +158,87 @@ Amazon Relational Database Service (RDS) es un servicio de base de datos relacio
 
 * **Documentación de RDS:** [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 
+
+<br >![ Screenshot of the empty token dialog box ](assets/images/s3.jpg)
+
+<br >![ Screenshot of the empty token dialog box ](assets/images/s3-bucket.jpg)
+
+<br >![ Screenshot of the empty token dialog box ](assets/images/s3-bucket-objects.jpg)
+
+<br>
+
+**Clases de almacenamiento de Amazon S3:**
+
+Las clases de almacenamiento de Amazon S3 son opciones de almacenamiento diseñadas para diferentes necesidades y casos de uso. Ofrecen diferentes niveles de rendimiento, disponibilidad y costo. Puede elegir la clase de almacenamiento que mejor se adapte a sus necesidades en función de la frecuencia con la que accede a sus datos y cuánto está dispuesto a pagar por el almacenamiento.
+
+Estas son las clases de almacenamiento de Amazon S3 disponibles:
+
+* **S3 Standard:** esta es la clase de almacenamiento predeterminada para Amazon S3. Es una buena opción para datos a los que se accede con frecuencia, como sitios web, aplicaciones y repositorios de código.
+
+* **S3-IA:** esta clase de almacenamiento es una buena opción para datos a los que se accede con menos frecuencia , como copias de seguridad y archivos de datos. Es más barato que S3 Standard, pero tiene un mayor tiempo de recuperación.
+
+* **S3 One Zone-IA:** esta clase de almacenamiento es similar a S3-IA, pero está diseñado para almacenar datos en una sola zona de disponibilidad. Esto lo hace más barato que S3-IA, pero también lo hace menos disponible.
+
+* **S3 Glacier:** esta clase de almacenamiento es una buena opción para datos de archivo a largo plazo. Es el más barato clase de almacenamiento, pero tiene el mayor tiempo de recuperación.
+
+* **S3 Deep Archive:** esta clase de almacenamiento es la opción más económica para el almacenamiento de datos a largo plazo. Está diseñado para datos que necesitan ser retenidos durante períodos prolongados de tiempo y a los que rara vez se accede.
+
+
+Puede elegir la clase de almacenamiento adecuada para sus necesidades utilizando la siguiente tabla:
+
+| **Clase de almacenamiento** | **Acceso** | **Costo** | **Disponibilidad** |
+|---|---|---|---|
+| S3 Standard | Frecuente | Alto | Alto |
+| S3-IA | Poco frecuente | Medio | Medio |
+| S3 One Zone-IA | Poco frecuente | Bajo | Bajo |
+| Glaciar S3 | Raro | Bajo | Bajo |
+| S3 Deep Archive | Rara vez | Más bajo | Más bajo |
+
+Además de las clases de almacenamiento, también puede usar Amazon S3 Lifecycle para automatizar la transición de sus datos a diferentes clases de almacenamiento en función de su edad. Esto puede ayudarlo a ahorrar dinero al mover datos a clases de almacenamiento más baratas a medida que envejecen.
+
+Para obtener más información sobre las clases de almacenamiento de Amazon S3, consulte la siguiente documentación:
+
+* Tipos de almacenamiento en la nube: [https://aws.amazon.com/es/s3/storage-classes/](https://aws.amazon.com/es/s3/storage-classes/)
+* Uso de las clases de almacenamiento de Amazon S3: [https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/storage-class-intro.html](https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/storage-class-intro.html)
+
+## Versionado S3: Una red de seguridad para sus datos
+
+**¿Qué es?**
+
+El versionado de Amazon S3 es una función que le permite realizar un seguimiento de todas las versiones de un objeto a medida que cambia. Esto significa que puede recuperar versiones anteriores de un objeto, incluso si lo ha sobrescrito o eliminado accidentalmente.
+
+**¿Cómo funciona?**
+
+Cuando habilita el versionado para un bucket de S3, cada vez que carga un nuevo objeto o modifica uno existente, S3 crea una nueva versión del objeto. Cada versión tiene un identificador único que incluye la fecha y hora en que se creó.
+
+**¿Cuáles son los beneficios?**
+
+* **Protección contra errores humanos:** Si elimina accidentalmente un objeto o lo sobrescribe con una versión incorrecta, puede restaurarlo fácilmente a una versión anterior.
+* **Seguimiento de cambios:** Puede ver el historial de cambios de un objeto para ver quién lo modificó y cuándo.
+* **Cumplimiento normativo:** El versionado puede ayudarlo a cumplir con los requisitos normativos que exigen que conserve registros de sus datos durante un período de tiempo específico.
+
+**¿Cuáles son las limitaciones?**
+
+* **Costo:** Se le cobra por almacenar cada versión de un objeto.
+* **Complejidad:** El versionado puede agregar complejidad a la administración de sus buckets de S3.
+
+**¿Cómo habilitarlo?**
+
+Puede habilitar el versionado para un bucket de S3 en la consola de administración de AWS, la API de AWS o la CLI de AWS.
+
+**¿Cómo usarlo?**
+
+Puede recuperar versiones anteriores de un objeto utilizando la consola de administración de AWS, la API de AWS o la CLI de AWS.
+
+**Para obtener más información:**
+
+* Documentación de Amazon S3 sobre el versionado: [https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/Versioning.html](https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/Versioning.html)
+
+**Resumen:**
+
+El versionado de S3 es una herramienta poderosa que puede ayudarlo a proteger sus datos contra errores humanos, realizar un seguimiento de los cambios y cumplir con los requisitos normativos. Sin embargo, es importante tener en cuenta las limitaciones de costo y complejidad antes de habilitarlo.
+
+
 ## AWS Redshift:
 
 **¿Qué es?**

@@ -2,16 +2,14 @@
     Obtener secrets desde AWS
 """
 import logging
-import sys
 from venv import logger
 
 import boto3
-from botocore.exceptions import ClientError
+
 
 class GetSecretWrapper:
     def __init__(self, secretsmanager_client):
         self.client = secretsmanager_client
-
 
     def get_secret(self, secret_name):
         """
@@ -37,7 +35,7 @@ class GetSecretWrapper:
 
 
 if __name__ == "__main__":
-    try :
+    try:
         session = boto3.session.Session()
         client = session.client(
             service_name='secretsmanager',

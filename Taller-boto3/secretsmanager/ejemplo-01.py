@@ -6,7 +6,8 @@ from venv import logger
 
 import boto3
 
-
+SECRET_NAME = "test/twitter"
+REGION_NAME = "us-east-1"
 class GetSecretWrapper:
     def __init__(self, secretsmanager_client):
         self.client = secretsmanager_client
@@ -39,9 +40,10 @@ if __name__ == "__main__":
         session = boto3.session.Session()
         client = session.client(
             service_name='secretsmanager',
-            region_name='us-east-1'
+            region_name=REGION_NAME
         )
         print("")
-        print(GetSecretWrapper(client).get_secret("test/twitter"))
+        print(GetSecretWrapper(client).get_secret(SECRET_NAME))
+
     except Exception as e:
         logger.error(f"Un error desconocido ocurrió: {str(e)}.")

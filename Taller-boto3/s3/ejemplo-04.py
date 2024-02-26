@@ -2,7 +2,28 @@ from venv import logger
 
 import boto3
 
+
+BUCKET_NAME = "ceste-test-bucket-name-3"
+REGION_NAME = "us-east-1"
+RESOURCE_TO_LOAD = 'resources/sample_data.csv'
+OBJECT_LOADED_NAME = 'sample_data.csv'
+
 s3 = boto3.client('s3')
+
+def cargar_archivo(bucket_name, archivo, name_in_bucket):
+    s3 = boto3.resource('s3')
+    s3.Bucket(bucket_name).upload_file(archivo, name_in_bucket)
+
+    print("Archivo cargado")
+    return 0
+
+# Crear funcion para cargar un archivo en S3 bucket versionado
+def cargar_archivo_versionado(bucket_name, archivo, name_in_bucket):
+    s3 = boto3.resource('s3')
+    s3.Bucket(bucket_name).upload_file(archivo, name_in_bucket, ExtraArgs={'Versioning': '01.01.01'})
+    print("Archivo cargado")
+    return 0
+
 
 def procesar_s3_csv(bucket_name, archivo):
     resp = s3.select_object_content(
@@ -24,8 +45,12 @@ def procesar_s3_csv(bucket_name, archivo):
             print(f"Detalles de estadísticas bytes procesados: {statsDetails['BytesProcessed']} ")
             print(f"Bytes de detalles de estadísticas devueltos: {statsDetails['BytesReturned']}")
 
+
+
 if __name__ == "__main__":
     try:
-        procesar_s3_csv('my-bucket-ceste', 'sample_data.csv')
+        cargar_archivo(BUCKET_NAME, RESOURCE_TO_LOAD, OBJECT_LOADED_NAME)
+        procesar_s3_csv(BUCKET_NAME, OBJECT_LOADED_NAME)
     except Exception as e:
         logger.error(f"Un error desconocido ocurrió: {str(e)}.")
+

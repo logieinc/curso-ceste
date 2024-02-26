@@ -2,6 +2,12 @@ from venv import logger
 
 import boto3
 
+BUCKET_NAME = "ceste-test-bucket-name-3"
+REGION_NAME = "us-east-1"
+RESOURCE_TO_LOAD = "resources/logo-ceste.png"
+OBJECT_LOADED_NAME = "logo-ceste.png"
+RESOURCE_TO_DOWNLOAD = "resources/logo-ceste-2.png"
+
 # Cargar archivo a bucket
 def cargar_archivo(bucket_name, archivo, name_in_bucket):
     s3 = boto3.resource('s3')
@@ -26,7 +32,7 @@ def obtener_permisos_acl(bucket_name, archivo):
 
 if __name__ == "__main__":
     try:
-        cargar_archivo('my-bucket-ceste', 'resources/logo-ceste.png', 'logo-ceste.png')
-        descargar_archivo_con_nombre('my-bucket-ceste', 'logo-ceste.png', 'resources/logo-ceste-2.png')
+        cargar_archivo(BUCKET_NAME, RESOURCE_TO_LOAD, OBJECT_LOADED_NAME)
+        descargar_archivo_con_nombre(BUCKET_NAME, OBJECT_LOADED_NAME, RESOURCE_TO_DOWNLOAD)
     except Exception as e:
         logger.error(f"Un error desconocido ocurrió: {str(e)}.")

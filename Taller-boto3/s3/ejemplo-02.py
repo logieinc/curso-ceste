@@ -3,9 +3,9 @@ from venv import logger
 import boto3
 from botocore.exceptions import ClientError
 
-BUCKET_NAME = "ceste-test-bucket-name-3"
+BUCKET_NAME = "ceste-lab-bucket-fabian"
 REGION_NAME = "us-east-1"
-VERSIONED = False
+VERSIONED = True
 
 class BucketWrapper:
     """Encapsula S3 acciones buckets."""

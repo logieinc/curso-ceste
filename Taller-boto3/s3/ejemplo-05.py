@@ -2,7 +2,7 @@ from venv import logger
 
 import boto3
 
-BUCKET_NAME = "ceste-test-bucket-name-3"
+BUCKET_NAME = "ceste-lab-bucket-fabian"
 REGION_NAME = "us-east-1"
 RESOURCE_TO_LOAD = 'resources/sample_data.csv.gz'
 OBJECT_LOADED_NAME = 'sample_data.csv.gz'

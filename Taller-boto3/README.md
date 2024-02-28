@@ -74,6 +74,8 @@
    print(instance.id, instance.state)
    ```
 
+* **Documentación de AWS SDK for Python :** https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+
 ### AWS Secrets Manager:
 
 **¿Qué es?**
@@ -239,6 +241,20 @@ Amazon Relational Database Service (RDS) es un servicio de base de datos relacio
 
 * **Documentación de RDS:** [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 
+Un cluster en Amazon RDS, también conocido como **clúster de base de datos**, es un grupo de instancias de base de datos que trabajan juntas para proporcionar alta disponibilidad, escalabilidad y rendimiento. 
+
+Existen dos tipos principales de clusters en RDS:
+
+* **Clusters de base de datos de Amazon Aurora:** Son clusters altamente disponibles y escalables que ofrecen una opción compatible con MySQL y PostgreSQL. Se componen de una instancia de base de datos de escritor y una o más instancias de base de datos de lectura "[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)".
+* **Clusters de base de datos Multi-AZ:** Son grupos de instancias de base de datos que se extienden por varias Zonas de Disponibilidad (AZ) dentro de una región de AWS. Esto proporciona alta disponibilidad y resistencia a fallos de hardware o software en una sola AZ "[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.MultiAZDBClusters.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.MultiAZDBClusters.html)".
+
+Los clusters de RDS ofrecen varias ventajas sobre las instancias de base de datos individuales, que incluyen:
+
+* **Alta disponibilidad:** Si una instancia de base de datos en el cluster falla, las restantes pueden hacerse cargo automáticamente para garantizar que la aplicación tenga acceso a los datos.
+* **Escalabilidad:** Puede agregar o eliminar fácilmente instancias del cluster para satisfacer las necesidades cambiantes de su aplicación.
+* **Rendimiento mejorado:** Los clusters pueden distribuir la carga de trabajo entre varias instancias, lo que puede mejorar el rendimiento general de la base de datos.
+
+En resumen, un cluster en AWS RDS es una opción valiosa para aplicaciones que requieren alta disponibilidad, escalabilidad y rendimiento.
 
 ## AWS Redshift:
 

@@ -134,6 +134,36 @@ Amazon Simple Storage Service (Amazon S3) es un servicio de almacenamiento de ob
 
 * **Documentación de Amazon S3:** https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/Welcome.html
 
+## Componentes de Amazon S3
+
+**Amazon S3** se compone de varios elementos clave que trabajan en conjunto para proporcionar un servicio de almacenamiento en la nube escalable y seguro. A continuación, se presenta una descripción general de los componentes principales:
+
+**1. Buckets:** Son contenedores virtuales que almacenan sus datos en la nube. Actúan como unidades fundamentales de almacenamiento dentro de S3.
+
+**2. Objetos:** Son las unidades individuales de datos que se almacenan dentro de un bucket. Cada objeto tiene un identificador único, metadatos (información sobre el objeto) y puede tener un tamaño de hasta 5 TB.
+
+**3. Puntos de acceso:** Son interfaces de red virtuales que le permiten acceder a sus buckets S3 de forma segura y confiable. Puede crear puntos de acceso públicos o privados para controlar quién puede acceder a sus datos.
+
+**4. Versiones de objetos:** Le permiten realizar un seguimiento de las diferentes versiones de un objeto a lo largo del tiempo. Esto puede ser útil para recuperar versiones anteriores de un archivo si se ha modificado accidentalmente o si necesita acceder a una versión específica para fines de cumplimiento.
+
+**5. Lifecycle Management:** Le permite automatizar la administración de sus objetos S3. Puede configurar reglas para eliminar automáticamente objetos antiguos, moverlos a diferentes clases de almacenamiento o exportarlos a otros servicios de AWS.
+
+**6. Replication:** Le permite crear copias redundantes de sus datos en diferentes regiones de AWS. Esto puede mejorar la disponibilidad y la durabilidad de sus datos en caso de un fallo regional.
+
+**7. Encryption:** Le permite proteger sus datos en reposo y en tránsito mediante el uso de algoritmos de cifrado estándar de la industria.
+
+**8. Server-Side Access Logging:** Le permite registrar todas las solicitudes realizadas a sus buckets S3. Estos registros pueden ser útiles para auditar el acceso a sus datos y para solucionar problemas.
+
+**9. CloudWatch Monitoring:** Le permite monitorizar el rendimiento y la actividad de sus buckets S3. Puede utilizar CloudWatch para recibir alertas cuando se produzcan eventos específicos, como un aumento en el número de errores de solicitud.
+
+**10. AWS Identity and Access Management (IAM):** Le permite controlar quién puede acceder a sus buckets S3 y qué acciones pueden realizar. Puede crear usuarios y grupos con diferentes permisos para controlar el acceso granular a sus datos.
+
+**Además de estos componentes principales, S3 también ofrece una amplia gama de características adicionales, como:**
+
+* **S3 Transfer Acceleration:** Acelera las transferencias de datos hacia y desde S3.
+* **Amazon S3 Glacier:** Ofrece una opción de almacenamiento de bajo costo para datos a largo plazo.
+* **Amazon S3 Object Lambda:** Le permite ejecutar código personalizado en respuesta a eventos S3.
+
 
 <br >![ Screenshot of the empty token dialog box ](assets/images/s3.jpg)
 

@@ -353,3 +353,35 @@ AWS MWAA es un servicio gestionado de Apache Airflow que le permite ejecutar sus
 
 * **Documentación de MWAA:** https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html
 
+##  LocalStack
+
+**LocalStack** es una herramienta de código abierto que te permite ejecutar servicios de AWS en tu propio ordenador. Es una excelente opción para:
+
+* **Desarrollar aplicaciones localmente:** Puedes probar tu código sin necesidad de conectarte a la nube de AWS, lo que te permite trabajar sin conexión a internet y ahorrar costes.
+* **Testear integraciones con AWS:** Puedes configurar un entorno de prueba con los servicios de AWS que necesitas para tus pruebas, sin afectar a tu entorno de producción.
+* **Demostrar y aprender sobre AWS:** Puedes experimentar con diferentes servicios de AWS sin necesidad de crear una cuenta en la nube.
+
+**LocalStack ofrece una amplia gama de servicios de AWS**, incluyendo:
+
+* EC2 (instancias de computación)
+* S3 (almacenamiento de objetos)
+* Lambda (funciones sin servidor)
+* RDS (bases de datos relacionales)
+* SNS (servicio de notificaciones)
+* SQS (colas de mensajes)
+* DynamoDB (base de datos NoSQL)
+* API Gateway (pasarela de APIs)
+
+**Es fácil de usar:**
+
+1. Instala LocalStack en tu ordenador.
+2. Inicia LocalStack con el comando `localstack start`.
+3. Configura tu aplicación para usar los endpoints locales de LocalStack.
+4. ¡Comienza a usar los servicios de AWS!
+
+**LocalStack es una herramienta poderosa y versátil** que puede ayudarte a desarrollar, probar y aprender sobre AWS de forma más eficiente.
+
+**Recursos adicionales:**
+
+* Sitio web de LocalStack: [https://localstack.cloud/](https://localstack.cloud/)
+* Documentación de LocalStack: [https://localstack.cloud/docs/](https://localstack.cloud/docs/)

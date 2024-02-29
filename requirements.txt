@@ -12,3 +12,5 @@ marshmallow-sqlalchemy
 flasgger~=0.9.7.1
 boto3~=1.34.46
 botocore~=1.34.46
+redshift_connector
+pymysql

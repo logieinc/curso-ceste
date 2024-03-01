@@ -86,8 +86,8 @@ def obtener_lista_versiones_archivo_s3(bucket_name: str, object_key: str) -> lis
 
 if __name__ == "__main__":
     try:
-        #cargar_archivo(BUCKET_NAME, RESOURCE_TO_LOAD, OBJECT_LOADED_NAME)
-        #procesar_s3_csv(BUCKET_NAME, OBJECT_LOADED_NAME)
+        cargar_archivo(BUCKET_NAME, RESOURCE_TO_LOAD, OBJECT_LOADED_NAME)
+        procesar_s3_csv(BUCKET_NAME, OBJECT_LOADED_NAME)
         lista_versiones = obtener_lista_versiones_archivo_s3(BUCKET_NAME, OBJECT_LOADED_NAME)
         for version in lista_versiones:
             print(f"Versión: {version['VersionId']}")

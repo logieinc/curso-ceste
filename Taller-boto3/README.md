@@ -415,3 +415,92 @@ AWS MWAA es un servicio gestionado de Apache Airflow que le permite ejecutar sus
 
 * Sitio web de LocalStack: [https://localstack.cloud/](https://localstack.cloud/)
 * Documentación de LocalStack: [https://localstack.cloud/docs/](https://localstack.cloud/docs/)
+
+## AWS Lambda: 
+
+**¿Qué es AWS Lambda?**
+
+AWS Lambda es un servicio de computación sin servidor ("serverless") de Amazon Web Services (AWS) que te permite ejecutar código sin necesidad de aprovisionar o gestionar servidores. Se activa mediante eventos y solo pagas por los recursos que utilizas. Es una forma flexible y escalable de ejecutar código para una amplia variedad de aplicaciones.
+
+**Características principales:**
+
+* **Sin servidores:** No necesitas aprovisionar ni gestionar servidores. AWS Lambda se encarga de todo lo relacionado con la infraestructura, como el aprovisionamiento de capacidad, el escalado automático y el registro.
+* **Basado en eventos:** Lambda se activa mediante eventos. Puedes configurar Lambda para que se ejecute en respuesta a eventos de otros servicios de AWS, como S3, DynamoDB o CloudWatch, o desde aplicaciones externas.
+* **Altamente escalable:** Lambda puede escalarse automáticamente para manejar cualquier carga de trabajo. Solo pagas por los recursos que utilizas.
+* **Económico:** Solo pagas por el tiempo de ejecución que utiliza tu código. No hay cargos por aprovisionamiento ni por inactividad.
+* **Fácil de usar:** Puedes desarrollar y desplegar funciones Lambda con rapidez y facilidad. Lambda admite una amplia variedad de lenguajes de programación y marcos de trabajo.
+
+**Aplicaciones destacadas:**
+
+* **Procesamiento de datos:** Lambda puede utilizarse para procesar datos de diversas fuentes, como archivos, flujos de datos y bases de datos.
+* **Aplicaciones web y móviles:** Lambda puede utilizarse para crear backends para aplicaciones web y móviles.
+* **IoT:** Lambda puede utilizarse para conectar dispositivos IoT y procesar sus datos.
+* **Análisis:** Lambda puede utilizarse para analizar datos y generar informes.
+* **Herramientas de administración:** Lambda puede utilizarse para crear herramientas de administración para tu infraestructura AWS.
+
+**En resumen, AWS Lambda es una herramienta potente y versátil que te permite ejecutar código de forma flexible y escalable sin necesidad de gestionar servidores. Es una excelente opción para una amplia variedad de aplicaciones.**
+
+**Para obtener más información sobre AWS Lambda, puedes visitar los siguientes recursos:**
+
+* **Sitio web de AWS Lambda:** [https://aws.amazon.com/lambda/](https://aws.amazon.com/lambda/)
+* **Documentación de AWS Lambda:** [https://docs.aws.amazon.com/lambda/](https://docs.aws.amazon.com/lambda/)
+* **Tutoriales de AWS Lambda:** [https://aws.amazon.com/lambda/getting-started/](https://aws.amazon.com/lambda/getting-started/)
+
+## Ejemplos de eventos que pueden desencadenar una función Lambda:
+
+**Eventos de Amazon S3:**
+
+* **Objeto creado:** Se invoca una función Lambda cada vez que se carga un nuevo objeto en un bucket de S3. Puedes usar esto para procesar los archivos que se cargan, como generar miniaturas de imágenes o extraer texto de documentos PDF.
+* **Objeto eliminado:** Se invoca una función Lambda cada vez que se elimina un objeto de un bucket de S3. Puedes usar esto para liberar espacio de almacenamiento o registrar la eliminación de archivos.
+* **Objeto modificado:** Se invoca una función Lambda cada vez que se modifica un objeto en un bucket de S3. Puedes usar esto para actualizar metadatos o realizar otras acciones en función de los cambios realizados en el archivo.
+
+**Eventos de Amazon DynamoDB:**
+
+* **Inserción:** Se invoca una función Lambda cada vez que se inserta un nuevo elemento en una tabla de DynamoDB. Puedes usar esto para enviar notificaciones, actualizar otros sistemas o realizar otras acciones en función de los datos insertados.
+* **Actualización:** Se invoca una función Lambda cada vez que se actualiza un elemento existente en una tabla de DynamoDB. Puedes usar esto para mantener la coherencia de los datos en otros sistemas o realizar otras acciones en función de los cambios realizados en el elemento.
+* **Eliminación:** Se invoca una función Lambda cada vez que se elimina un elemento de una tabla de DynamoDB. Puedes usar esto para liberar espacio de almacenamiento o registrar la eliminación de elementos.
+
+**Eventos de AWS CloudWatch:**
+
+* **Alarma:** Se invoca una función Lambda cada vez que se activa una alarma de CloudWatch. Puedes usar esto para enviar notificaciones, tomar medidas correctivas o realizar otras acciones en respuesta a la alarma.
+* **Métrica:** Se invoca una función Lambda cada vez que se publica una nueva métrica en CloudWatch. Puedes usar esto para analizar los datos de las métricas o realizar otras acciones en función de los valores de las métricas.
+* **Registro:** Se invoca una función Lambda cada vez que se registran nuevos registros en CloudWatch Logs. Puedes usar esto para analizar los registros, buscar patrones o realizar otras acciones en función de los datos de los registros.
+
+**Otros eventos:**
+
+* **Solicitudes HTTP:** Puedes usar Amazon API Gateway para invocar una función Lambda en respuesta a solicitudes HTTP. Esto es útil para crear backends web y móviles sin necesidad de aprovisionar ni gestionar servidores web.
+* **Eventos personalizados:** Puedes crear tus propios eventos personalizados y usarlos para invocar funciones Lambda. Esto te da flexibilidad para crear aplicaciones que se adapten a tus necesidades específicas.
+
+## Eventos poco comunes pero interesantes para AWS Lambda:
+
+Si bien los ejemplos que te mencioné anteriormente son algunos de los eventos más comunes que se utilizan con AWS Lambda, existen muchos otros eventos menos comunes que pueden ser interesantes para investigar y explorar. Estos eventos pueden ser útiles para crear aplicaciones únicas e innovadoras. A continuación, te presento algunos ejemplos:
+
+**1. Eventos de Amazon Kinesis:**
+
+* **Flujo de datos:** Se invoca una función Lambda cada vez que se registra un nuevo lote de datos en una transmisión de Kinesis. Puedes usar esto para procesar datos en tiempo real, como analizar flujos de datos de sensores o realizar análisis de fraude.
+* **Registro de registros:** Se invoca una función Lambda cada vez que se registran nuevos registros en Amazon Kinesis Firehose. Puedes usar esto para analizar registros de alta velocidad provenientes de aplicaciones, servidores y dispositivos.
+
+**2. Eventos de Amazon SNS:**
+
+* **Notificación de mensaje:** Se invoca una función Lambda cada vez que se recibe un nuevo mensaje en un tema de SNS. Puedes usar esto para enviar notificaciones por correo electrónico, SMS o notificaciones push a aplicaciones móviles.
+* **Suscripción a un tema:** Se invoca una función Lambda cada vez que una nueva suscripción se agrega a un tema de SNS. Puedes usar esto para dar la bienvenida a nuevos suscriptores o enviarles información inicial.
+* **Cancelación de suscripción a un tema:** Se invoca una función Lambda cada vez que se cancela una suscripción a un tema de SNS. Puedes usar esto para eliminar a los suscriptores inactivos o enviarles un correo electrónico de despedida.
+
+**3. Eventos de AWS IoT Core:**
+
+* **Dispositivo conectado:** Se invoca una función Lambda cada vez que un dispositivo se conecta a AWS IoT Core. Puedes usar esto para inicializar el dispositivo, registrarlo en un grupo o suscribirlo a temas de SNS.
+* **Dispositivo desconectado:** Se invoca una función Lambda cada vez que un dispositivo se desconecta de AWS IoT Core. Puedes usar esto para detectar fallas del dispositivo, enviar alertas o tomar otras medidas correctivas.
+* **Mensaje publicado:** Se invoca una función Lambda cada vez que un dispositivo publica un mensaje en un tema de AWS IoT Core. Puedes usar esto para procesar los datos del dispositivo, tomar medidas en función de los datos o enviar notificaciones.
+
+**4. Eventos de AWS API Gateway:**
+
+* **Solicitud HTTP:** Se invoca una función Lambda cada vez que se recibe una solicitud HTTP en una API Gateway. Puedes usar esto para crear backends web y móviles, implementar APIs RESTful o crear aplicaciones web dinámicas.
+* **Autenticación de usuario:** Se invoca una función Lambda cada vez que un usuario se autentica correctamente en una API Gateway. Puedes usar esto para personalizar la experiencia del usuario, registrar la actividad del usuario o aplicar controles de acceso basados en roles.
+
+**5. Eventos personalizados:**
+
+* **Evento personalizado de aplicación:** Puedes crear tus propios eventos personalizados y usarlos para invocar funciones Lambda. Esto te da la flexibilidad de crear aplicaciones que se adapten a tus necesidades específicas.
+* **Evento programado:** Puedes usar AWS CloudWatch Events para programar la invocación de una función Lambda en un momento específico o con una periodicidad determinada. Esto es útil para ejecutar tareas recurrentes, como enviar informes diarios o procesar datos por lotes.
+
+**Estos son solo algunos ejemplos de eventos poco comunes pero interesantes que puedes utilizar con AWS Lambda. Con un poco de creatividad, puedes encontrar muchas otras formas de usar Lambda para crear aplicaciones innovadoras y útiles.**
+

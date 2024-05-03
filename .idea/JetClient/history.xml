@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="History">
+    <option name="requestHistoryStates">
+      <list>
+        <requestHistoryState>
+          <option name="dateTime" value="1714684997592" />
+          <option name="id" value="0d2f53aa-dc9b-4822-823a-20c2ca35a1a0" />
+          <option name="request">
+            <requestState>
+              <option name="id" value="1850aff8-631c-4882-869d-76167d85c898" />
+              <option name="method" value="POST" />
+              <option name="name" value="New Request" />
+              <option name="url" value="https://1gdbbvkoxi.execute-api.us-east-1.amazonaws.com/test/my-post-lab" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="IkhlbGxvIGZyb20gTGFtYmRhISI=" />
+              <option name="bodyString" value="&quot;Hello from Lambda!&quot;" />
+              <option name="code" value="200" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Thu, 02 May 2024 21:23:17 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="20" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="keep-alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="x-amzn-RequestId" />
+                    <option name="value" value="72c33600-8d54-4cba-8952-05dc8dc9fb6e" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="x-amz-apigw-id" />
+                    <option name="value" value="XKWa3F4iIAMEajQ=" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Amzn-Trace-Id" />
+                    <option name="value" value="Root=1-66340445-6e0818603d14f91162563372;Parent=27be61d1492dd21a;Sampled=0;lineage=d472fcf9:0" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="0d2f53aa-dc9b-4822-823a-20c2ca35a1a0" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="&quot;Hello from Lambda!&quot;" />
+              <option name="size" value="20" />
+              <option name="time" value="400" />
+            </responseState>
+          </option>
+        </requestHistoryState>
+      </list>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="folders">
+      <list>
+        <folderState>
+          <option name="id" value="e41dc8da-25a0-4bd8-a0fe-3d80859e679b" />
+          <option name="name" value="New Collection" />
+          <option name="requests">
+            <list>
+              <requestState>
+                <option name="id" value="1850aff8-631c-4882-869d-76167d85c898" />
+                <option name="method" value="POST" />
+                <option name="name" value="New Request" />
+                <option name="url" value="https://1gdbbvkoxi.execute-api.us-east-1.amazonaws.com/test/my-post-lab" />
+              </requestState>
+            </list>
+          </option>
+          <option name="sortWeight" value="1000000" />
+          <option name="syncProperties">
+            <synchronizationPropertiesState>
+              <option name="folderPath" value="$PROJECT_DIR$/.jetclient" />
+            </synchronizationPropertiesState>
+          </option>
+        </folderState>
+      </list>
+    </option>
+    <option name="id" value="3304c803-9c34-4a39-86ca-5651ef4f2376" />
+  </component>
+</project>

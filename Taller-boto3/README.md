@@ -504,3 +504,48 @@ Si bien los ejemplos que te mencioné anteriormente son algunos de los eventos m
 
 **Estos son solo algunos ejemplos de eventos poco comunes pero interesantes que puedes utilizar con AWS Lambda. Con un poco de creatividad, puedes encontrar muchas otras formas de usar Lambda para crear aplicaciones innovadoras y útiles.**
 
+## Amazon API Gateway
+
+**¿Qué es?**
+
+Amazon API Gateway es un servicio de AWS que te permite crear, publicar, mantener, monitorizar y proteger APIs REST, HTTP y WebSocket a cualquier escala. 
+
+**¿Cómo funciona?**
+
+API Gateway actúa como una puerta de entrada única para tus APIs, enrutando las solicitudes de los clientes a los backend adecuados. Puedes conectarlo a diversos servicios backend, como:
+
+* Funciones de AWS Lambda
+* Amazon Elastic Compute Cloud (EC2)
+* Aplicaciones web
+* Otros servicios de AWS
+
+**Características principales:**
+
+* **Soporte para múltiples tipos de API:** RESTful, HTTP y WebSocket
+* **Mecanismos de autenticación y autorización potentes:** Políticas de AWS IAM, funciones Lambda de autorizador y grupos de usuarios de Amazon Cognito
+* **Monitoreo y registro detallados:** Supervisa el rendimiento de la API y registra las solicitudes y respuestas
+* **Seguridad mejorada:** Protección contra ataques DDoS, inyección de SQL y cross-site scripting
+* **Escalabilidad flexible:** Maneja desde unas pocas solicitudes por minuto hasta millones de solicitudes por segundo
+* **Precios basados en el uso:** Paga solo por las solicitudes que realizas
+
+**Beneficios de usar API Gateway:**
+
+* **Simplifica la creación y gestión de APIs:** Proporciona una interfaz visual para crear, publicar y mantener APIs
+* **Mejora la seguridad de las APIs:** Protege tus APIs contra accesos no autorizados
+* **Te ayuda a escalar tus APIs:** Maneja automáticamente el aumento del tráfico
+* **Te ofrece una visión completa del rendimiento de tus APIs:** Monitoriza el rendimiento de las APIs y registra las solicitudes y respuestas
+
+**Casos de uso:**
+
+* **Exponer datos y funcionalidad a aplicaciones móviles y web**
+* **Crear APIs para integraciones entre sistemas**
+* **Desarrollar aplicaciones de IoT**
+* **Crear APIs para juegos en línea**
+
+**Recursos adicionales:**
+
+* **Documentación de Amazon API Gateway:** [https://docs.aws.amazon.com/apigateway/](https://docs.aws.amazon.com/apigateway/)
+
+**En resumen, Amazon API Gateway es una herramienta poderosa y versátil que te puede ayudar a crear, publicar, mantener, monitorizar y proteger APIs a cualquier escala.**
+
+

@@ -549,3 +549,69 @@ API Gateway actúa como una puerta de entrada única para tus APIs, enrutando la
 **En resumen, Amazon API Gateway es una herramienta poderosa y versátil que te puede ayudar a crear, publicar, mantener, monitorizar y proteger APIs a cualquier escala.**
 
 
+## API Gateway y API REST: Trabajando juntos en AWS
+
+En AWS, API Gateway funciona como una "puerta de enlace" para tus API REST (RESTful). Veamos qué significa cada término y cómo colaboran:
+
+**API REST (RESTful):**
+
+- **Interfaz de programación de aplicaciones:** Es un conjunto de reglas que define cómo las aplicaciones se comunican entre sí. REST es un estilo arquitectónico popular para las API RESTful.
+- **RESTful:** Cumple con los principios de REST, como la comunicación sin estado (el servidor no necesita recordar las interacciones previas con un cliente), el uso de verbos HTTP estándar (GET, POST, PUT, DELETE) y la representación de recursos en un formato como JSON o XML.
+
+**API Gateway:**
+
+- **Gestor de API:** Actúa como un intermediario entre los clientes que solicitan recursos y los servicios backend que proporcionan esos recursos.
+- **Funciones:**
+    - **Punto de entrada único:** Todas las solicitudes de API pasan a través de API Gateway, lo que simplifica la administración y el control de acceso.
+    - **Enrutamiento:** API Gateway dirige las solicitudes a los servicios backend adecuados en función de la URL solicitada y el método HTTP utilizado.
+    - **Funciones adicionales:** Puede realizar tareas como la autenticación, la autorización, la limitación de velocidad y el registro de solicitudes.
+
+**Trabajando en conjunto:**
+
+- Imagine que tiene una aplicación móvil que necesita acceder a datos de un servidor backend. La aplicación móvil envía una solicitud REST a API Gateway.
+- API Gateway recibe la solicitud, la autentifica y la enruta al servicio backend apropiado.
+- El servicio backend procesa la solicitud, recupera los datos y devuelve una respuesta.
+- API Gateway devuelve la respuesta al cliente móvil.
+
+**Beneficios:**
+
+- **Simplicidad:** API Gateway facilita la creación, publicación, mantenimiento y protección de tus API REST a cualquier escala.
+- **Flexibilidad:** Se integra con varios servicios backend de AWS, incluidos AWS Lambda, Amazon EC2 y aplicaciones web.
+- **Escalabilidad:** Puede manejar grandes volúmenes de tráfico sin problemas.
+- **Seguridad:** Ofrece funciones de seguridad integradas, como la autenticación y la autorización.
+
+**En resumen:**
+
+API Gateway y las API REST trabajan juntas para proporcionar una forma segura, escalable y flexible de crear y administrar servicios web en AWS. API Gateway actúa como una capa de abstracción, ocultando los detalles de la implementación del backend y simplificando la comunicación entre clientes y servicios.
+
+
+## API Gateway WebSockets:
+
+API Gateway en Amazon Web Services (AWS) te permite crear canales de comunicación bidireccionales y en tiempo real entre clientes web y servicios backend. Esto contrasta con las API REST tradicionales, que funcionan con un modelo de solicitud-respuesta.
+
+**Características clave:**
+
+- **Comunicación bidireccional:** Los clientes pueden enviar mensajes al servidor, y el servidor puede enviar datos de forma proactiva a los clientes conectados sin que estos tengan que hacer solicitudes explícitas. Esto permite actualizaciones de datos en tiempo real y experiencias interactivas.
+- **Integración con backends:** API Gateway WebSockets se puede integrar con varios servicios backend, incluidas funciones AWS Lambda, puntos finales HTTP u otros servicios AWS. Esta flexibilidad te permite adaptar la API a los requisitos específicos de tu aplicación.
+- **Funciones de administración de API:** API Gateway ofrece un conjunto de funciones para administrar tus API WebSocket durante todo su ciclo de vida, incluida la creación, autorización, limitación, monitoreo y control de versiones. Esto simplifica el desarrollo y mantenimiento de la API.
+
+**Beneficios del uso de API Gateway WebSockets:**
+
+- **Actualizaciones en tiempo real:** Permite que las aplicaciones muestren actualizaciones de datos en vivo (por ejemplo, precios de acciones, mensajes de chat, lecturas de sensores) sin necesidad de sondeo constante del lado del cliente.
+- **Carga reducida del servidor:** Al enviar actualizaciones en lugar de depender del sondeo del cliente, puedes minimizar la carga del servidor y mejorar la capacidad de respuesta de la aplicación.
+- **Experiencia de usuario mejorada:** Las interacciones en tiempo real crean una experiencia de usuario más atractiva y dinámica, especialmente para aplicaciones que requieren un flujo continuo de datos.
+
+**Casos de uso comunes:**
+
+- **Aplicaciones de chat en tiempo real:** Los WebSockets son ideales para crear aplicaciones de chat donde los usuarios necesitan ver los mensajes a medida que se envían, sin necesidad de refrescar la página.
+- **Paneles de datos en vivo:** Actualiza los paneles con flujos de datos en tiempo real (por ejemplo, resultados deportivos, mercados financieros, datos de sensores IoT) para una visualización inmediata.
+- **Edición colaborativa:** Facilita la colaboración en tiempo real en documentos, código u otro contenido, asegurando que todos vean los cambios simultáneamente.
+- **Juegos multijugador:** Habilita la comunicación de baja latencia entre jugadores en juegos en línea, permitiendo interacciones y actualizaciones en tiempo real.
+
+**En resumen:**
+
+API Gateway WebSockets proporciona una herramienta poderosa para crear aplicaciones web interactivas en tiempo real. Al aprovechar la comunicación bidireccional, la integración con varios backends y las funciones de administración de API, puedes crear una experiencia de usuario dinámica y atractiva. Si estás desarrollando una aplicación que requiere actualizaciones de datos en tiempo real o interacciones de baja latencia, considera usar API Gateway WebSockets como base para tu arquitectura de comunicación.
+
+
+
+

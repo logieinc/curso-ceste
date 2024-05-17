@@ -613,5 +613,118 @@ API Gateway en Amazon Web Services (AWS) te permite crear canales de comunicaci�
 API Gateway WebSockets proporciona una herramienta poderosa para crear aplicaciones web interactivas en tiempo real. Al aprovechar la comunicación bidireccional, la integración con varios backends y las funciones de administración de API, puedes crear una experiencia de usuario dinámica y atractiva. Si estás desarrollando una aplicación que requiere actualizaciones de datos en tiempo real o interacciones de baja latencia, considera usar API Gateway WebSockets como base para tu arquitectura de comunicación.
 
 
+## Amazon Simple Notification Service (SNS) en resumen:
+
+**¿Qué es?**
+
+* Un servicio de mensajería en la nube escalable y de bajo costo.
+* Permite que las aplicaciones y los usuarios finales reciban notificaciones desde aplicaciones, servicios y dispositivos.
+
+**¿Cómo funciona?**
+
+1. **Temas:** Los usuarios crean temas para definir a qué tipo de notificaciones quieren suscribirse.
+2. **Suscripciones:** Los usuarios se suscriben a temas para recibir notificaciones.
+3. **Publicaciones:** Las aplicaciones publican mensajes en temas para notificar a los suscriptores.
+4. **Entrega:** SNS entrega los mensajes a los suscriptores a través de diferentes protocolos, como correo electrónico, SMS, notificaciones push móviles, etc.
+
+**Beneficios:**
+
+* **Escalabilidad:** SNS puede manejar grandes volúmenes de notificaciones sin problemas.
+* **Bajo costo:** SNS es un servicio de pago por uso, solo paga por lo que usa.
+* **Flexibilidad:** SNS admite una amplia gama de protocolos de entrega y opciones de filtrado.
+* **Confiabilidad:** SNS es un servicio altamente disponible y duradero.
+* **Integración:** SNS se integra con otros servicios de AWS, como SQS y Lambda.
+
+**Casos de uso:**
+
+* **Notificaciones de aplicaciones:** Notifique a los usuarios sobre eventos en sus aplicaciones, como nuevos pedidos, cambios de estado, etc.
+* **Alertas:** Envíe alertas a los administradores sobre problemas de infraestructura, errores de aplicaciones, etc.
+* **Marketing:** Envíe notificaciones promocionales a los clientes, como ofertas, cupones, etc.
+* **Verificación:** Envíe códigos de verificación a los usuarios para verificar su identidad.
+
+**Recursos adicionales:**
+
+* **Sitio web de SNS de AWS:** [https://aws.amazon.com/sns/](https://aws.amazon.com/sns/)
+* **Documentación de SNS de AWS:** [https://docs.aws.amazon.com/sns/](https://docs.aws.amazon.com/sns/)
+
+**En resumen, SNS es una herramienta poderosa y versátil que puede ayudarlo a mejorar la comunicación y la eficiencia de sus aplicaciones.**
+
+
+## Amazon SQS en resumen:
+
+**¿Qué es?**
+
+* Un servicio de **colas de mensajes** totalmente administrado ofrecido por AWS.
+* Sirve como intermediario confiable para transferir datos entre aplicaciones.
+
+**¿Cómo funciona?**
+
+1. **Productor:** Envía mensajes a una cola SQS.
+2. **Cola SQS:** Almacena los mensajes de forma segura y duradera.
+3. **Consumidor:** Recibe mensajes de la cola y los procesa.
+
+**Tipos de colas:**
+
+* **Cola estándar:** Ideal para la mayoría de los casos, garantiza la entrega "al menos una vez" con alto rendimiento.
+* **Cola FIFO:** Mantiene el orden de los mensajes (primero en entrar, primero en salir) y asegura el procesamiento "exactamente una vez".
+
+**Beneficios:**
+
+* **Desacoplamiento:** Permite que las aplicaciones funcionen de forma independiente sin preocuparse por la disponibilidad de otros componentes.
+* **Escalabilidad:** SQS maneja sin problemas grandes volúmenes de mensajes.
+* **Fiabilidad:** Garantiza la entrega confiable de mensajes.
+* **Elasticidad:** Se escala automáticamente para satisfacer las demandas.
+
+**Casos de uso:**
+
+* **Microservicios:** Facilita la comunicación entre servicios independientes.
+* **Procesamiento por lotes:** Permite procesar tareas de forma asincrónica.
+* **Escalado automático:** Activa recursos en función del volumen de mensajes.
+* **Aplicaciones sin servidor:** Dispara funciones Lambda en respuesta a nuevos mensajes.
+
+**Recursos adicionales:**
+
+* **Sitio web de SQS de AWS:** [https://aws.amazon.com/sqs/getting-started/](https://aws.amazon.com/sqs/getting-started/)
+* **Documentación de SQS de AWS:** [https://docs.aws.amazon.com/sqs/](https://docs.aws.amazon.com/sqs/)
+
+**En resumen, SQS es una herramienta fundamental para crear aplicaciones escalables, desacopladas y tolerantes a fallos en la nube de AWS.**
+
+## Diferencias entre SNS y SQS:
+
+Tanto SNS como SQS son servicios de AWS utilizados para la comunicación dentro de tus aplicaciones, pero tienen propósitos diferentes:
+
+**Amazon SNS (Simple Notification Service):**
+
+* **Enfoque:** Mensajería Pub/Sub para distribución amplia.
+* **Entrega:** Envía mensajes a múltiples suscriptores a la vez (modelo de abanico).
+* **Casos de uso:**
+    * Enviar notificaciones (correos electrónicos, SMS, notificaciones push móviles) a los usuarios según eventos.
+    * Alertas y actualizaciones del sistema para administradores.
+    * Campañas de marketing y promociones.
+* **Suscriptores:** Pueden ser varios servicios como pasarelas de correo electrónico, servicios de SMS, aplicaciones móviles u otros temas SNS.
+* **Contenido del mensaje:** Flexible, puede contener texto, datos JSON, etc.
+* **Garantía de entrega:** Entrega al menos una vez, pero sin orden garantizado.
+
+**Amazon SQS (Simple Queue Service):**
+
+* **Enfoque:** Cola de mensajes para comunicación asincrónica entre aplicaciones.
+* **Entrega:** Entrega mensajes a un destinatario a la vez (modelo punto a punto).
+* **Casos de uso:**
+    * Desacoplamiento de aplicaciones para mejorar la escalabilidad y la tolerancia a fallos.
+    * Procesamiento de tareas de forma asincrónica y por lotes.
+    * Activación de funciones sin servidor como AWS Lambda en respuesta a nuevos mensajes.
+* **Receptores:** Normalmente otra aplicación o servicio que consume mensajes de la cola.
+* **Contenido del mensaje:** Suele ser información relevante para la tarea de procesamiento.
+* **Garantía de entrega:** Ofrece dos opciones:
+    * Colas estándar: Entrega "al menos una vez", válida para la mayoría de los casos.
+    * Colas FIFO: Mantienen el orden de los mensajes (entrega "exactamente una vez"), ideal para tareas críticas.
+
+**Analogía:** Imagina a SNS como un pregonero que hace anuncios a todos en la plaza del pueblo. Todos escuchan el mensaje (abanico), pero algunos pueden perdérselo si no prestan atención. SQS es como un buzón: envías mensajes (tareas) a un destinatario específico, que los procesa a su propio ritmo.
+
+**Adicionalmente:**
+
+* SNS se puede integrar con SQS. Puedes publicar un mensaje en un tema SNS y tener una cola SQS suscrita a ese tema. Esto permite una notificación más amplia y un procesamiento posterior por parte de aplicaciones específicas.
+* SNS se suele utilizar para notificaciones en tiempo real o casi en tiempo real, mientras que SQS se suele utilizar para tareas de procesamiento asincrónico que no requieren una acción inmediata.
+
 
 

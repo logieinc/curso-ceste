@@ -1,5 +1,70 @@
 <br >![ Screenshot of the empty token dialog box ](../assets/images/logo-ceste.png)
 
+### AWS Lambda
+
+  ```python
+    import json
+    
+    from os import environ
+    
+    import boto3 
+    
+    print('Loading function')
+    
+    
+    def lambda_handler(event, context):
+        #print("Received event: " + json.dumps(event, indent=2))
+        print("value1 = " + event['key1'])
+        print("value2 = " + event['key2'])
+        print("value3 = " + event['key3'])
+        
+        print(environ.get('ORG_ID'))
+        
+        lambda_client = boto3.client('lambda')
+    
+        response = lambda_client.invoke(FunctionName='sumLambda',
+                            InvocationType='RequestResponse',
+                            Payload=json.dumps({'num1': 1, 'num2': 2}))
+            
+        
+        print(response)
+        
+        # Lee la respuesta
+        response_payload = json.loads(response['Payload'].read())
+        
+        return {
+            'statusCode': 200,
+            'body': json.dumps({
+                'result': response_payload['body']
+            })
+        }
+   ```
+
+  ```python
+    import json
+    
+    def lambda_handler(event, context):
+        """Función que realiza la operación de suma de dos números.
+    
+        Args:
+            event (dict): Diccionario que contiene los datos de entrada.
+            context (lambda.Context): Objeto que proporciona información sobre la ejecución de la función.
+    
+        Returns:
+            dict: Diccionario que contiene el resultado de la suma.
+        """
+    
+        num1 = event['num1']
+        num2 = event['num2']
+    
+        resultado = num1 + num2
+    
+        return {
+            'statusCode': 200,
+            'body': resultado
+        }
+   ```
+
 ### AWS Lambda & S3
 
   ```python
@@ -158,6 +223,20 @@
         "gameRoundId" : 125949494,
         "score" : 75
     }
+
+    {
+      "playerId": {
+        "S": "374rtygh"
+      },
+      "date": {
+        "S": "Aug 13 2024 19:20:05"
+      },
+      "gameRoundId": {
+        "N": "3478651874"
+      },
+      "score": {
+        "N": "88"
+      }
 
    ```python
         import json

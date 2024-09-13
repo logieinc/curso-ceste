@@ -281,7 +281,7 @@ Deberías ver algo como:
       }
 ```
 
-**Ejemplos avanzados**
+## Ejemplos avanzados
 
 Puedes ir un paso más allá y conectar esta Lambda con otros servicios como S3, DynamoDB, o SQS. Aquí tienes un ejemplo de cómo hacerlo:
 
@@ -341,6 +341,176 @@ Puedes verificar los logs de tu función Lambda utilizando el servicio de logs s
 
 - Pruebas automatizadas: Implementa pruebas unitarias o de integración usando herramientas como Jest o Mocha, y configura LocalStack como parte de tu pipeline de CI.
 - Interacciones complejas: Conectar Lambdas con DynamoDB, API Gateway, o crear workflows más avanzados simulando entornos reales de AWS.
+
+
+## Pasos para crear un API Gateway en LocalStack que invoque una Lambda
+
+**Configuración Inicial**
+
+Asegúrate de que LocalStack esté corriendo con los servicios de Lambda y API Gateway habilitados en tu docker-compose.yml.
+
+```yaml
+      version: '3.8'
+      services:
+      localstack:
+      image: localstack/localstack
+      container_name: localstack
+      ports:
+            - "4566:4566"
+            - "4571:4571"
+      environment:
+            - SERVICES=lambda,apigateway
+            - DEBUG=1
+      volumes:
+            - "./localstack:/var/lib/localstack"
+```
+
+Levanta LocalStack con Docker Compose:
+
+```shell
+      docker-compose up
+```
+
+**Crear la Función Lambda**
+
+Crea una función Lambda simple. Primero, escribe el código de la Lambda en un archivo llamado lambda_function.js:
+
+```json
+      exports.handler = async (event) => {
+      const name = event.queryStringParameters?.name || 'mundo';
+      return {
+            statusCode: 200,
+            body: JSON.stringify({
+                  message: `¡Hola, ${name}!`
+            }),
+      };
+      };
+```
+
+Esta función Lambda tomará un parámetro name de la consulta de la API y responderá con un saludo.
+
+**Empaqueta la Lambda:**
+
+```json
+      zip lambda_function.zip lambda_function.js
+```
+
+**Crea la Lambda en LocalStack:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 lambda create-function \
+      --function-name HolaLambda \
+      --runtime nodejs14.x \
+      --role arn:aws:iam::000000000000:role/lambda-role \
+      --handler lambda_function.handler \
+      --zip-file fileb://lambda_function.zip
+```
+
+**Crear API Gateway**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway create-rest-api --name "MiAPI"
+```
+
+Esto devolverá el restApiId. Guárdalo para usarlo más adelante.
+
+**Obtener el resourceId del recurso raíz:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway get-resources \
+      --rest-api-id <restApiId>
+```
+
+El resourceId del recurso raíz (/) será el primer valor devuelto. Guárdalo también.
+
+**Crear un nuevo recurso:**
+
+Vamos a crear un recurso saludo que se vinculará a nuestra Lambda:
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway create-resource \
+      --rest-api-id <restApiId> \
+      --parent-id <resourceId> \
+      --path-part saludo
+```
+
+Esto devolverá otro resourceId para el recurso /saludo.
+
+**Crear el método GET en el recurso /saludo:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway put-method \
+      --rest-api-id <restApiId> \
+      --resource-id <resourceIdDelSaludo> \
+      --http-method GET \
+      --authorization-type "NONE"
+```
+
+**Vincular Lambda al método:**
+
+Ahora conectemos la Lambda para que se ejecute cuando alguien haga una solicitud GET a /saludo.
+
+**Establecer la integración entre API Gateway y Lambda:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway put-integration \
+      --rest-api-id <restApiId> \
+      --resource-id <resourceIdDelSaludo> \
+      --http-method GET \
+      --type AWS_PROXY \
+      --integration-http-method POST \
+      --uri arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:000000000000:function:HolaLambda/invocations
+```
+
+**Dar permiso a API Gateway para invocar la Lambda:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 lambda add-permission \
+      --function-name HolaLambda \
+      --statement-id api-gateway-access \
+      --action lambda:InvokeFunction \
+      --principal apigateway.amazonaws.com \
+      --source-arn arn:aws:execute-api:us-east-1:000000000000:<restApiId>/*
+```
+
+**Desplegar la API**
+
+Una vez configurada la API y su integración con Lambda, necesitamos desplegarla.
+
+**Crear una nueva etapa de despliegue:**
+
+```shell
+      aws --endpoint-url=http://localhost:4566 apigateway create-deployment \
+      --rest-api-id <restApiId> \
+      --stage-name prod
+```
+
+**Probar la API**
+
+Ahora puedes probar la API invocando el endpoint generado por API Gateway.
+
+**Obtén el endpoint de la API:**
+
+```shell
+      http://localhost:4566/restapis/<restApiId>/prod/_user_request_/saludo?name=Juan
+```
+
+**Invoca la API usando curl:**
+
+```shell
+      curl "http://localhost:4566/restapis/<restApiId>/prod/_user_request_/saludo?name=Juan"
+```
+
+Deberías obtener una respuesta similar a:
+
+
+```json
+{
+    "message": "¡Hola, Juan!"
+}
+```
+
+
 
 
 
